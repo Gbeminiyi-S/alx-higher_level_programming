@@ -18,7 +18,7 @@ An introductory project on:
 - export PYCODE='print(f"Best School: {88+10}")'
 - 
 ### C Scripts
-- Files are compiled on Ubuntu 20.04 LTS using gcc, using the options -Wall -Werror -Wextra -pedantic -std=gnu89
+- Files are compiled on Ubuntu 20.04 LTS using gcc, using the options `-Wall -Werror -Wextra -pedantic -std=gnu89`
 - Codes are check with the Betty style using [betty-style.pl](https://github.com/holbertonschool/Betty/blob/master/betty-style.pl) and [betty-doc.pl](https://github.com/holbertonschool/Betty/blob/master/betty-doc.pl)
 ## File Descriptions
 ### Mandatory
@@ -66,11 +66,11 @@ An introductory project on:
 
 [102-magic_calculation.py](https://github.com/Gbeminiyi-S/alx-higher_level_programming/blob/main/0x00-python-hello_world/102-magic_calculation.py) - Python function def magic_calculation(a, b): that does exactly the same as the following Python bytecode:
 
-'''
+```
  3           0 LOAD_CONST               1 (98)
              3 LOAD_FAST                0 (a)
-			 6 LOAD_FAST                1 (b)
-			 9 BINARY_POWER
-			 10 BINARY_ADD
-			 11 RETURN_VALUE
-'''
+	     6 LOAD_FAST                1 (b)
+	     9 BINARY_POWER
+	     10 BINARY_ADD
+	     11 RETURN_VALUE
+```
