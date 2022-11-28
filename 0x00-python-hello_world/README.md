@@ -14,9 +14,8 @@ An introductory project on:
 - All scripts are tested on Ubuntu 20.04 LTS
 - All scripts are exactly two lines long (wc -l file should print 2)
 - All your files are executable
-- export PYFILE=main.py
-- export PYCODE='print(f"Best School: {88+10}")'
-- 
+- `export PYFILE=main.py`
+- `export PYCODE='print(f"Best School: {88+10}")'`
 ### C Scripts
 - Files are compiled on Ubuntu 20.04 LTS using gcc, using the options `-Wall -Werror -Wextra -pedantic -std=gnu89`
 - Codes are check with the Betty style using [betty-style.pl](https://github.com/holbertonschool/Betty/blob/master/betty-style.pl) and [betty-doc.pl](https://github.com/holbertonschool/Betty/blob/master/betty-doc.pl)
