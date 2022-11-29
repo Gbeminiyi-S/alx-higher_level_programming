@@ -9,4 +9,5 @@ if (number_cpy % 10) > 5:
 elif (number_cpy % 10) == 0:
 	print(f"Last digit of {number} is {number_cpy % 10} and is 0")
 else:
-	print(f"Last digit of {number} is {number_cpy % 10} and is less than 6 and not 0")
+	print(f"Last digit of {number} is {number_cpy % 10} \
+	and is less than 6 and not 0")
