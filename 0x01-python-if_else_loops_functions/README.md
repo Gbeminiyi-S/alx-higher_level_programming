@@ -36,12 +36,13 @@ An introductory project on:
 [1-last_digit.py](https://github.com/Gbeminiyi-S/alx-higher_level_programming/blob/main/0x01-python-if_else_loops_functions/1-last_digit.py) - This program will assign a random signed number to the variable `number` each time it is executed. Complete the [source code](https://github.com/holbertonschool/0x01.py/blob/master/1-last_digit_py) in order to print the last digit of the `number` stored in the variable `number`
 
 - The output of the program should be:
-  - The string Last digit of, followed by
+	- The string `Last digit of`, followed by
   	- the `number`, followed by
-	- the string is, followed by the last digit of `number`, followed by
-	  - if the last digit is greater than 5: the string `and is greater than 5`
-	- if the number is less than 0: is negative
-  - followed by a new line
+	- the string `is`, followed by the last digit of `number`, followed by
+		- if the last digit is greater than 5: the string `and is greater than 5`
+		- if the last digit is 0: the string `and is 0`
+		- if the last digit is less than 6 and not 0: the string `and is less than 6 and not 0`
+  	- followed by a new line
 [2-print_alphabet.py](https://github.com/Gbeminiyi-S/alx-higher_level_programming/blob/main/0x01-python-if_else_loops_functions/2-print_alphabet.py) - a program that prints the `ASCII` alphabet, except 'q' and 'e'  in lowercase, not followed by a new line
 
 [3-print_alphabt.py](https://github.com/Gbeminiyi-S/alx-higher_level_programming/blob/main/0x01-python-if_else_loops_functions/3-print_alphabt.py) - a program that prints the `ASCII` alphabet, in lowercase, not followed by a new line
