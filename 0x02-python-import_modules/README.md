@@ -14,12 +14,12 @@ An introductory project on:
 - All files are executable
 ## File Descriptions
 ### Mandatory
-[0-add.py](https://github.com/Gbeminiyi-S/alx-higher_level_programming/blob/main/0x02-python-import_modules/0-add.py) - a program that imports the function `def add(a, b)`: from the file `add_0.py` and prints the result of the addition `1 + 2 = 3`
+[0-add.py](https://github.com/Gbeminiyi-S/alx-higher_level_programming/blob/main/0x02-python-import_modules/0-add.py) - a program that imports the function `def add(a, b)`: from the file [add_0.py](https://github.com/Gbeminiyi-S/alx-higher_level_programming/blob/main/0x02-python-import_modules/test_files/add_0.py) and prints the result of the addition `1 + 2 = 3`
 - the value `1` is assigned to a variable called `a`
 - the value `2` is assigned to a variable called `b`
 - the two variables as arguments when calling the functions `add` and `print`
 
-[1-calculation.py](https://github.com/Gbeminiyi-S/alx-higher_level_programming/blob/main/0x02-python-import_modules/1-calculation.py) - a program that imports functions from the file `calculator_1.py`, does some Maths, and prints the result.
+[1-calculation.py](https://github.com/Gbeminiyi-S/alx-higher_level_programming/blob/main/0x02-python-import_modules/1-calculation.py) - a program that imports functions from the file [calculator_1.py](https://github.com/Gbeminiyi-S/alx-higher_level_programming/blob/main/0x02-python-import_modules/test_files/calculator_1.py), does some Maths, and prints the result.
 - the value `10` is defined to a variable `a`
 - the value `5` is defined to a variable `b`
 
@@ -34,9 +34,9 @@ An introductory project on:
 
 [4-hidden_discovery.py](https://github.com/Gbeminiyi-S/alx-higher_level_programming/blob/main/0x02-python-import_modules/4-hidden_discovery.py) - a program that prints all the names defined by the compiled module [hidden_4.pyc](https://github.com/holbertonschool/0x02.py/raw/master/hidden_4.pyc)
 
-[5-variable_load.py](https://github.com/Gbeminiyi-S/alx-higher_level_programming/blob/main/0x02-python-import_modules/5-variable_load.py) - a program that imports the variable `a` from the file `variable_load_5.py` and prints its value
+[5-variable_load.py](https://github.com/Gbeminiyi-S/alx-higher_level_programming/blob/main/0x02-python-import_modules/5-variable_load.py) - a program that imports the variable `a` from the file [variable_load_5.py](https://github.com/Gbeminiyi-S/alx-higher_level_programming/blob/main/0x02-python-import_modules/test_files/variable_load_5.py) and prints its value
 
-[100-my_calculator.py](https://github.com/Gbeminiyi-S/alx-higher_level_programming/blob/main/0x02-python-import_modules/100-my_calculator.py) - a program that imports all functions from the file `calculator_1.py` and handles basic operations
+[100-my_calculator.py](https://github.com/Gbeminiyi-S/alx-higher_level_programming/blob/main/0x02-python-import_modules/100-my_calculator.py) - a program that imports all functions from the file [calculator_1.py](https://github.com/Gbeminiyi-S/alx-higher_level_programming/blob/main/0x02-python-import_modules/test_files/calculator_1.py) and handles basic operations
 
 [101-easy_print.py](https://github.com/Gbeminiyi-S/alx-higher_level_programming/blob/main/0x02-python-import_modules/101-easy_print.py) - a program that prints `#pythoniscool`, followed by a new line, in the standard output
 - not allowed to use `print` or `eval` or `open` or `import sys`
