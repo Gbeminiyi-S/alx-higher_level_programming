@@ -5,7 +5,7 @@ def print_matrix_integer(matrix=[[]]):
             separator = ''
             for element in row:
                 if separator != '':
-                    print(separator, end='')
-                print("{}{:x}".format(separator, element), end='')
+                    print("{}".format(separator), end='')
+                print("{:x}".format(element), end='')
                 separator = ' '
-            print()
+            print("".format())
