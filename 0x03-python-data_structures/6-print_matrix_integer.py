@@ -4,8 +4,8 @@ def print_matrix_integer(matrix=[[]]):
         for row in matrix:
             separator = ''
             for element in row:
-                if separator != '':
-                    print("{}".format(separator), end='')
-                print("{:x}".format(element), end='')
+                if separator:
+                    print(separator, end='')
+                print("{:d}".format(element), end='')
                 separator = ' '
-            print("".format())
+            print()
