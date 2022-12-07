@@ -59,3 +59,34 @@ An introductory project on:
   - Prototype: `def no_c(my_string):`
   - The function should return the new string
   - not allowed to use `str.replace()`
+
+[6-print_matrix_integer.py](https://github.com/Gbeminiyi-S/alx-higher_level_programming/blob/main/0x03-python-data_structures/6-print_matrix_integer.py) - a function that prints a matrix of integers
+
+[7-add_tuple.py](https://github.com/Gbeminiyi-S/alx-higher_level_programming/blob/main/0x03-python-data_structures/7-add_tuple.py) - a function that adds 2 tuples
+- Prototype: `def add_tuple(tuple_a=(), tuple_b=()):`
+- Returns a tuple with 2 integers:
+   - The first element should be the addition of the first element of each argument
+   - The second element should be the addition of the second element of each argument
+- If a tuple is smaller than 2, use the value 0 for each missing integer
+- If a tuple is bigger than 2, use only the first 2 integers
+
+[8-multiple_returns.py](https://github.com/Gbeminiyi-S/alx-higher_level_programming/blob/main/0x03-python-data_structures/8-multiple_returns.py) - a function that returns a tuple with the length of a string and its first character
+- Prototype: def multiple_returns(sentence):`
+- If the sentence is empty, the first character should be equal to `None`
+
+[9-max_integer.py](https://github.com/Gbeminiyi-S/alx-higher_level_programming/blob/main/0x03-python-data_structures/9-max_integer.py) - a function that finds the biggest integer of a list
+- Prototype: `def max_integer(my_list=[]):`
+- If the list is empty, return `None`
+- You are not allowed to use the builtin `max()`
+
+[10-divisible_by_2.py](https://github.com/Gbeminiyi-S/alx-higher_level_programming/blob/main/0x03-python-data_structures/10-divisible_by_2.py) - a function that finds all multiples of 2 in a list
+- Prototype: `def divisible_by_2(my_list=[]):`
+- Return a new list with `True` or `False`, depending on whether the integer at the same position in the original list is a multiple of 2
+- The new list should have the same size as the original list
+
+[11-delete_at.py](https://github.com/Gbeminiyi-S/alx-higher_level_programming/blob/main/0x03-python-data_structures/11-delete_at.py) - a function that deletes the item at a specific position in a list
+- Prototype: `def delete_at(my_list=[], idx=0):`
+- If `idx` is negative or out of range, nothing change (returns the same list)
+- You are not allowed to use `pop()`
+
+[12-switch.py](https://github.com/Gbeminiyi-S/alx-higher_level_programming/blob/main/0x03-python-data_structures/12-switch.py) - Complete the [source code](https://github.com/holbertonschool/0x03.py/blob/master/12-switch_py) in order to switch value of `a` and `b`
