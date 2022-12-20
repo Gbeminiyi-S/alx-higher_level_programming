@@ -30,7 +30,7 @@ An introductory project on:
 - one line per argument
   - the position of the argument (starting at 1) followed by :, followed by the argument value and a new line
 
-[3-infinite_add.py](https://github.com/Gbeminiyi-S/alx-higher_level_programming/blob/main/0x02-python-import_modules/3-infinite_add.py) - a program that prints the result of the addition of all arguments
+[3-infinite_add.py](https://github.com/Gbeminiyi-S/alx-higher_level_programming/blob/main/0x02-python-import_modules/3-infinite_add.py) - a program that prints the result of the addition of all arguments 
 
 [4-hidden_discovery.py](https://github.com/Gbeminiyi-S/alx-higher_level_programming/blob/main/0x02-python-import_modules/4-hidden_discovery.py) - a program that prints all the names defined by the compiled module [hidden_4.pyc](https://github.com/holbertonschool/0x02.py/raw/master/hidden_4.pyc)
 
