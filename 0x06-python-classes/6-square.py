@@ -3,15 +3,21 @@
 
 
 class Square:
-    """Defines a class: Square with a private attribute: size and checks Error
-      and returns the area of the square. Prints in stdout the square with the
-      character '#' preceded by ' ' as specified"""
+    """Defines a square"""
 
     def __init__(self, size=0, position=(0, 0)):
+        """initializes a square
+        Args:
+            size: length of each side
+            position: coordinate to locate square
+        """
         self.size = size
         self.position = position
 
     def area(self):
+        """Computes the area of the square
+        Returns: the result
+        """
         return pow(self.__size, 2)
 
     @property
@@ -33,11 +39,11 @@ class Square:
 
     @position.setter
     def position(self, value):
-        if len(value) == 2:
-            i, j = value
-            if isinstance(i, int) and isinstance(j, int):
-                if i >= 0 and j >= 0:
-                    self.__position = value
+        if not isinstance(value, tuple) and len(value) != 2:
+            raise TypeError("position must be a tuple of 2 positive integers")
+        i, j = value
+        if isinstance(i, int) and isinstance(j, int):
+            self.__position = value
         else:
             raise TypeError("position must be a tuple of 2 positive integers")
 
