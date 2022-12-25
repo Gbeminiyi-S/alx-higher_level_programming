@@ -2,6 +2,8 @@
 """defining a class 'MagicClass' that does the same as the Bytecode provided"""
 
 class MagicClass:
+    """defines a class 'MagicClass'"""
+
     import math
 
     def __init__(self, radius=0):
