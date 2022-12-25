@@ -1,9 +1,14 @@
 #!/usr/bin/python3
-"""No module imported"""
+"""Defines a class 'Square'"""
 
 
 class Square:
-    """Defines a class: Square with a private attribute: size"""
+    """Represents a square"""
 
     def __init__(self, size):
+        """Initializes a new square
+        
+        Args:
+            size (int): size of new square
+        """
         self.__size = size
