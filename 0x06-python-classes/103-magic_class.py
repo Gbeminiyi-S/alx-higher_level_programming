@@ -3,6 +3,7 @@
 
 import math
 
+
 class MagicClass:
     """defines a class 'MagicClass'"""
 
