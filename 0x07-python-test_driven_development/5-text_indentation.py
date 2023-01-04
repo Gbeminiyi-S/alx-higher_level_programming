@@ -1,9 +1,9 @@
-#/usr/bin/python3
+#!/usr/bin/python3
 """ Defines a function: text_indentation """
 
 
 def text_indentation(text):
-    """ prints a text with 2 new lines after each of 
+    """ prints a text with 2 new lines after each of
     these characters: '.', '?' and ':'
 
     Args:
