@@ -24,4 +24,5 @@ def print_square(size):
         if not (i % size) and (i != 0):
             print()
         print(f"#", end='')
-    print()
+    if size != 0:
+        print()
