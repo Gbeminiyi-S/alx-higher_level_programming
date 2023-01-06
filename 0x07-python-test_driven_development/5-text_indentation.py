@@ -20,4 +20,6 @@ def text_indentation(text):
         if text[i] in ['.', '?', ':']:
             print('\n')
             i += 1
+            if text[i] != ' ':
+                i -= 1
         i += 1
