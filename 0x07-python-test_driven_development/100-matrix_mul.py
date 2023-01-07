@@ -3,10 +3,7 @@
 
 
 def matrix_mul(m_a, m_b):
-    """multiplies two matrices"""
-        
-    if m_b:
-        res = [[0 for x in range(len(m_b[0]))] for y in range(len(m_a))]
+    """multiplies two matrices""" 
 
     if not isinstance(m_a, list):
         raise TypeError('m_a must be a list')
@@ -39,6 +36,9 @@ def matrix_mul(m_a, m_b):
 
     if len(m_a[0]) != len(m_b):
         raise ValueError("m_a and m_b can't be multiplied")
+
+    
+    res = [[0 for x in range(len(m_b[0]))] for y in range(len(m_a))]
 
     for i in range(len(m_a)):
         for j in range(len(m_b[0])):
