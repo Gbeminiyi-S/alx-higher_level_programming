@@ -14,11 +14,11 @@ Using ``lazy_matrix_mul``
 
     >>> lazy_matrix_mul('abc', [[1, 2], [3, 4]])
     Traceback (most recent call last):
-    TypeError: ufunc 'multiply' did not contain a loop with signature matching types dtype('<U3') dtype('<U3') dtype('<U3')
+    ValueError: Scalar operands are not allowed, use '*' instead
    
     >>> lazy_matrix_mul([[1, 2], [3, 4]], 'abc')
     Traceback (most recent call last):
-    TypeError: ufunc 'multiply' did not contain a loop with signature matching types dtype('<U3') dtype('<U3') dtype('<U3')
+    ValueError: Scalar operands are not allowed, use '*' instead
 
     >>> lazy_matrix_mul(['abc'], [[1, 2], [3, 4]])
     Traceback (most recent call last):
@@ -46,12 +46,12 @@ Using ``lazy_matrix_mul``
  
     >>> lazy_matrix_mul([['str', 2], [3, 4]], [[1, 2], [3, 4]])
     Traceback (most recent call last):
-    ValueError: data type must provide an itemsize
+    TypeError: invalid data type for einsum
 
     >>> lazy_matrix_mul([[10, 2], [3, 4]], [['abc', 2], [3, 4]])
     Traceback (most recent call last):
-    ValueError: data type must provide an itemsize
-    
+    TypeError: invalid data type for einsum
+ 
     >>> lazy_matrix_mul([[1, 2, 3], [3, 4]], [[1, 2], [3, 4]])
     Traceback (most recent call last):
     ValueError: setting an array element with a sequence.
