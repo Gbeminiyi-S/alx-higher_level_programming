@@ -14,55 +14,55 @@ Using ``lazy_matrix_mul``
 
     >>> lazy_matrix_mul('abc', [[1, 2], [3, 4]])
     Traceback (most recent call last):
-    TypeError: m_a must be a list
+    TypeError: ufunc 'multiply' did not contain a loop with signature matching types dtype('<U3') dtype('<U3') dtype('<U3')
    
     >>> lazy_matrix_mul([[1, 2], [3, 4]], 'abc')
     Traceback (most recent call last):
-    TypeError: m_b must be a list
+    TypeError: ufunc 'multiply' did not contain a loop with signature matching types dtype('<U3') dtype('<U3') dtype('<U3')
 
     >>> lazy_matrix_mul(['abc'], [[1, 2], [3, 4]])
     Traceback (most recent call last):
-    TypeError: m_a must be a list of lists
+    ValueError: shapes (1,) and (2,2) not aligned: 1 (dim 0) != 2 (dim 0)
 
     >>> lazy_matrix_mul([[1, 2], [3, 4]], ['abc'])
     Traceback (most recent call last):
-    TypeError: m_b must be a list of lists
+    ValueError: shapes (2,2) and (1,) not aligned: 2 (dim 1) != 1 (dim 0)
 
     >>> lazy_matrix_mul([1, 2, 3, 4],[[1, 2], [3, 4]])
     Traceback (most recent call last):
-    TypeError: m_a must be a list of lists
+    ValueError: shapes (4,) and (2,2) not aligned: 4 (dim 0) != 2 (dim 0)
 
     >>> lazy_matrix_mul([[1, 2], [3, 4]], [1, 2, 3, 4])
     Traceback (most recent call last):
-    TypeError: m_b must be a list of lists
+    ValueError: shapes (2,2) and (4,) not aligned: 2 (dim 1) != 4 (dim 0)
 
     >>> lazy_matrix_mul([[1, 2], [3, 4]], [])
     Traceback (most recent call last):
-    ValueError: m_b can't be empty
+    ValueError: shapes (2,2) and (0,) not aligned: 2 (dim 1) != 0 (dim 0)
 
     >>> lazy_matrix_mul([[]], [[1, 2], [3, 4]])
     Traceback (most recent call last):
-    ValueError: m_a can't be empty
+    ValueError: shapes (1,0) and (2,2) not aligned: 0 (dim 1) != 2 (dim 0)
  
     >>> lazy_matrix_mul([['str', 2], [3, 4]], [[1, 2], [3, 4]])
     Traceback (most recent call last):
-    TypeError: m_a should contain only integers or floats
+    ValueError: data type must provide an itemsize
 
     >>> lazy_matrix_mul([[10, 2], [3, 4]], [['abc', 2], [3, 4]])
     Traceback (most recent call last):
-    TypeError: m_b should contain only integers or floats
+    ValueError: data type must provide an itemsize
     
     >>> lazy_matrix_mul([[1, 2, 3], [3, 4]], [[1, 2], [3, 4]])
     Traceback (most recent call last):
-    TypeError: each row of m_a must be of the same size
+    ValueError: setting an array element with a sequence.
    
     >>> lazy_matrix_mul([[1, 2], [3, 4]], [[1, 2, 3], [3, 4]])
     Traceback (most recent call last):
-    TypeError: each row of m_b must be of the same size
+    ValueError: setting an array element with a sequence.
     
     >>> lazy_matrix_mul([[1, 2, 3], [3, 4, 5]], [[1, 2], [3, 4]])
     Traceback (most recent call last):
-    ValueError: m_a and m_b can't be multiplied
+    ValueError: shapes (2,3) and (2,2) not aligned: 3 (dim 1) != 2 (dim 0)
 
     >>> lazy_matrix_mul([[1, 2], [3, 4]])
     Traceback (most recent call last):
