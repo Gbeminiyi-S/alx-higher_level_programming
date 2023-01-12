@@ -10,10 +10,10 @@ Using ``MyList``
 
     >>> listA = MyList()
 
-    >>> type(ListA)
+    >>> type(listA)
     <class '1-my_list.MyList'>
 
-    >>> issubclass(listA, list)
+    >>> issubclass(MyList, list)
     True
 
     >>> listA.print_sorted()
