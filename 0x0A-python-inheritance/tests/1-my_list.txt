@@ -18,6 +18,7 @@ Using ``MyList``
 
     >>> listA.print_sorted()
     []
+    []
 
     >>> listA.append(2)
     >>> listA.append(1)
@@ -29,10 +30,12 @@ Using ``MyList``
 
     >>> listA.print_sorted()
     [1, 2, 3, 4]
+    [1, 2, 3, 4]
 
     >>> listB = MyList([1, 2, 6, -3])
 
     >>> listB.print_sorted()
+    [-3, 1, 2, 6]
     [-3, 1, 2, 6]
 
     >>> id(listB) == id(sorted(listB))
