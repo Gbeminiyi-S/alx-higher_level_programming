@@ -32,6 +32,5 @@ Using ``MyList``
 
     >>> listB = MyList([1, 2, 6, -3])
 
-    >>> listB is listB.print_sorted()
-    [-3, 1, 2, 6]
+    >>> listB is sorted(listB)
     False

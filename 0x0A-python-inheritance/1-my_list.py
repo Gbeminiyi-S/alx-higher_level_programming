@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """ Module to create inherited class """
 
+
 class MyList(list):
     """ creates a new class, MyList that inherits from list """
 
