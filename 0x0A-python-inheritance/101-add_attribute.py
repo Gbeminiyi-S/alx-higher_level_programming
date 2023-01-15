@@ -12,8 +12,6 @@ def add_attribute(obj, name, value):
     Raises:
         TypeError: if the attribute cannot be added
     """
-
-    try:
-        setattr(obj, name, value)
-    except Exception:
+    if not hasattr(obj, "__dict__"): 
         raise TypeError("can't add new attribute")
+    setattr(obj, name, value)
