@@ -75,6 +75,7 @@ An introductory project on:
 - Return: the address of the new node, or `NULL` if it failed
 - [lists.h](https://github.com/Gbeminiyi-S/alx-higher_level_programming/blob/main/0x01-python-if_else_loops_functions/lists.h): header file
 
+### Advanced
 [100-print_tebahpla.py](https://github.com/Gbeminiyi-S/alx-higher_level_programming/blob/main/0x01-python-if_else_loops_functions/100-print_tebahpla.py) - a program that prints the ASCII alphabet, in reverse order, alternating lowercase and uppercase (z in lowercase and Y in uppercase) , not followed by a new line
 
 [101-remove_char_at.py](https://github.com/Gbeminiyi-S/alx-higher_level_programming/blob/main/0x01-python-if_else_loops_functions/101-remove_char_at.py) - a function that creates a copy of the string, removing the character at the position `n` (not the Python way, the “C array index”)
