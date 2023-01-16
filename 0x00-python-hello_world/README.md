@@ -36,28 +36,23 @@ An introductory project on:
 [6-concat.py](https://github.com/Gbeminiyi-S/alx-higher_level_programming/blob/main/0x00-python-hello_world/6-concat.py) - Complete this [source code](https://github.com/holbertonschool/0x00.py/blob/master/6-concat.py) to print `Welcome to Holberton School!`
 
 [7-edges.py](https://github.com/Gbeminiyi-S/alx-higher_level_programming/blob/main/0x00-python-hello_world/7-edges.py) - Complete this [source code](https://github.com/holbertonschool/0x00.py/blob/master/7-edges.py)
-
 - not allowed to use any loops or conditional statements
-
 - `word_first_3` should contain the first 3 letters of the variable `word`
-
 - `word_last_2` should contain the last 2 letters of the variable `word`
-
 - `middle_word` should contain the value of the variable `word` without the first and last letters
 
 [8-concat_edges.py](https://github.com/Gbeminiyi-S/alx-higher_level_programming/blob/main/0x00-python-hello_world/8-concat_edges.py) - Complete this [source code](https://github.com/holbertonschool/0x00.py/blob/master/8-concat_edges.py) to print `object-oriented programming with Python`, followed by a new line.
-
 - not allowed to use any loops or conditional statements
-
 - program should be exactly 5 lines lon
-
 - not allowed to create new variables
-
 - not allowed to use string literals
 
 [9-easter_egg.py](https://github.com/Gbeminiyi-S/alx-higher_level_programming/blob/main/0x00-python-hello_world/9-easter_egg.py) -  Python script that prints “The Zen of Python”, by TimPeters, followed by a new line
 
 [10-check_cycle.c](https://github.com/Gbeminiyi-S/alx-higher_level_programming/blob/main/0x00-python-hello_world/10-check_cycle.c) - a function in C that checks if a singly linked list has a cycle in it
+- Prototype: `int check_cycle(listint_t *list);`
+- Return: Return: `0` if there is no cycle, `1` if there is a cycle
+- [lists.h](https://github.com/Gbeminiyi-S/alx-higher_level_programming/blob/main/0x00-python-hello_world/lists.h): header file
 
 [100-write.py](https://github.com/Gbeminiyi-S/alx-higher_level_programming/blob/main/0x00-python-hello_world/100-write.py) - a Python script that prints exactly `and that piece of art is useful - Dora Korpar, 2015-10-19`, followed by a new line
 
