@@ -18,7 +18,7 @@ An introductory project on:
 - Codes are checked with the pycodestyle (version 2.8.*)
 ### Python Test Cases
 - All test files should be inside a folder tests
-- All test files should be text files (extension: .txt)
+- All test files should be text files (extension: `.txt`)
 - All tests should be executed by using this command: `python3 -m doctest ./tests/*`
 - All modules should have a documentation (`python3 -c 'print(__import__("my_module").__doc__)'`)
 - All classes should have a documentation (`python3 -c 'print(__import__("my_module").MyClass.__doc__)'`)
