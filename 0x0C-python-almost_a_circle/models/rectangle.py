@@ -90,3 +90,28 @@ class Rectangle(Base):
         d = str(self.__width)
         e = str(self.__height)
         return name + "(" + a + ") " + b + '/' + c + ' - ' + d + '/' + e
+
+    def update(self, *args):
+        """ Updates the Rectangle.
+        Args:
+            *args (ints): New attribute values
+                - 1st argument represents id attribute
+                - 2nd argument represents width attribute
+                - 3rd argument represent height attribute
+                - 4th argument represents x attribute
+                - 5th argument represents y attribute
+        """
+        itr = 1
+
+        for arg in args:
+            if itr == 1:
+                self.id = arg
+            elif itr == 2:
+                self.__width = arg
+            elif itr == 3:
+                self.__height = arg
+            elif itr == 4:
+                self.__x = arg
+            elif itr == 5:
+                self.__y = arg
+            itr += 1
