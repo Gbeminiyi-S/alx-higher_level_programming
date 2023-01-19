@@ -70,4 +70,4 @@ An introductory project on:
     - Returns `rect_1` if both have the same area value
 
 [9-rectangle.py](https://github.com/Gbeminiyi-S/alx-higher_level_programming/blob/main/0x08-python-more_classes/9-rectangle.py) -  a class `Rectangle` that defines a rectangle by: (based on [8-rectangle.py](https://github.com/Gbeminiyi-S/alx-higher_level_programming/blob/main/0x08-python-more_classes/8-rectangle.py))
-Class method def square(cls, size=0): that returns a new Rectangle instance with width == height == size
+Class method `def square(cls, size=0):` that returns a new Rectangle instance with `width == height == size`
