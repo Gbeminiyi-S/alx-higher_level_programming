@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" module to create a class: append_write """
+""" module to create a function: append_write """
 
 
 def append_write(filename="", text=""):
