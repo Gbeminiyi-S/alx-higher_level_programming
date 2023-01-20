@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" Module to create a class: read_file """
+""" Module to create a function: read_file """
 
 
 def read_file(filename=""):
