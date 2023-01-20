@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 """ This module creates a class: Base """
+import json
 
 
 class Base:
@@ -13,3 +14,9 @@ class Base:
         else:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
+
+    @staticmethod
+    def to_json_string(list_dictionaries):
+        """ returns the JSON string representation of list_dictionaries """
+
+        return json.dumps(list_dictionaries)
