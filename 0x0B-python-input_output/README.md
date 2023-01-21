@@ -21,17 +21,17 @@ An introductory project on:
 ### Mandatory
 [0-read_file.py](https://github.com/Gbeminiyi-S/alx-higher_level_programming/blob/main/0x0B-python-input_output/0-read_file.py) - reads a text file (`UTF8`) and prints it to stdout
 - Prototype: `def read_file(filename=""):`
-- Use the with statement
+- Use the `with` statement
 
 [1-write_file.py](https://github.com/Gbeminiyi-S/alx-higher_level_programming/blob/main/0x0B-python-input_output/1-write_file.py) - writes a string to a text file (`UTF8`) and returns the number of characters written
-- Prototype: def write_file(filename="", text=""):
-- Use the with statement
+- Prototype: `def write_file(filename="", text=""):`
+- Use the `with` statement
 - function should create the file if doesn’t exist
 - function should overwrite the content of the file if it already exists
 
 [2-append_write.py](https://github.com/Gbeminiyi-S/alx-higher_level_programming/blob/main/0x0B-python-input_output/2-append_write.py) - appends a string at the end of a text file (`UTF8`) and returns the number of characters added
 - Prototype: `def append_write(filename="", text=""):`
-- Use the with statement
+- Use the `with` statement
 - function should create the file if doesn’t exist
 
 [3-to_json_string.py](https://github.com/Gbeminiyi-S/alx-higher_level_programming/blob/main/0x0B-python-input_output/3-to_json_string.py) - returns the JSON representation of an object (string)
@@ -42,11 +42,11 @@ An introductory project on:
 
 [5-save_to_json_file.py](https://github.com/Gbeminiyi-S/alx-higher_level_programming/blob/main/0x0B-python-input_output/5-save_to_json_file.py) - writes an Object to a text file, using a JSON representation
 - Prototype: `def save_to_json_file(my_obj, filename):`
-- Use the with statement
+- Use the `with` statement
 
 [6-load_from_json_file.py](https://github.com/Gbeminiyi-S/alx-higher_level_programming/blob/main/0x0B-python-input_output/6-load_from_json_file.py) - creates an Object from a “JSON file”
 - Prototype: `def load_from_json_file(filename):`
-- Use the with statement
+- Use the `with` statement
 
 [7-add_item.py](https://github.com/Gbeminiyi-S/alx-higher_level_programming/blob/main/0x0B-python-input_output/7-add_item.py) - a script that adds all arguments to a Python list, and then save them to a file
 - Use function save_to_json_file from [5-save_to_json_file.py](https://github.com/Gbeminiyi-S/alx-higher_level_programming/blob/main/0x0B-python-input_output/5-save_to_json_file.py)
@@ -79,8 +79,8 @@ An introductory project on:
   - A dictionary value will be the value of the public attribute
   
 [12-pascal_triangle.py](https://github.com/Gbeminiyi-S/alx-higher_level_programming/blob/main/0x0B-python-input_output/12-pascal_triangle.py) - a function `def pascal_triangle(n):` that returns a list of lists of integers representing the Pascal’s triangle of `n`:
-   - Returns an empty list if n <= 0
-   - You can assume n will be always an integer
+   - Returns an empty list if `n <= 0`
+   - You can assume `n` will be always an integer
    
 [100-append_after.py](https://github.com/Gbeminiyi-S/alx-higher_level_programming/blob/main/0x0B-python-input_output/100-append_after.py) - inserts a line of text to a file, after each line containing a specific string
 - Prototype: `def append_after(filename="", search_string="", new_string=""):`
