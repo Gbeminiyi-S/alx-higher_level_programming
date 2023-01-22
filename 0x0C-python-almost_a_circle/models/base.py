@@ -5,7 +5,6 @@ import json
 
 class Base:
     """ This creates the base class for other classes"""
-
     __nb_objects = 0
 
     def __init__(self, id=None):
@@ -37,3 +36,11 @@ class Base:
             else:
                 res = [i.to_dictionary() for i in list_objs]
             f.write(Base.to_json_string(res))
+
+    @staticmethod
+    def from_json_string(json_string):
+        """ returns the list of the JSON string representation json_string """
+        if not json_string:
+            return []
+        else:
+            return json.loads(json_string)
