@@ -33,7 +33,7 @@ class Base:
         filename = cls.__name__ + '.json'
         with open(filename, 'w', encoding='utf-8') as f:
             if not list_objs:
-                res = "[]"
+                res = []
             else:
                 res = [i.to_dictionary() for i in list_objs]
             f.write(Base.to_json_string(res))
