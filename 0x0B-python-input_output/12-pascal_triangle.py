@@ -12,7 +12,7 @@ def pascal_triangle(n):
     for i in range(n):
         inner_list = []
         for j in range(i + 1):
-            if (j == 0) or (j == line):
+            if (j == 0) or (j == i):
                 res = 1
             else:
                 res = outer_list[i - 1][j - 1] + outer_list[i - 1][j]
