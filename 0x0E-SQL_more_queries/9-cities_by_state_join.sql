@@ -1,6 +1,7 @@
--- lists all cities contained in the database hbtn_0d_usa
-SELECT s.title, g.genre_id
-  FROM tv_shows AS s
-        INNER JOIN tv_show_genres AS g
-	ON s.id = g.show_id
- ORDER BY s.title, g.genre_id;
+-- Lists all cities in the database hbtn_0d_usa.
+-- Records are sorted in order of ascending cities.id.
+SELECT c.`id`, c.`name`, s.`name`
+  FROM `cities` AS c
+       INNER JOIN `states` AS s
+       ON c.`state_id` = s.`id`
+ ORDER BY c.`id`;
