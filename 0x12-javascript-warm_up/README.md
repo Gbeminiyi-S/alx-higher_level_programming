@@ -47,6 +47,13 @@
 [9-add.js](https://github.com/Gbeminiyi-S/alx-higher_level_programming/blob/main/0x12-javascript-warm_up/9-add.js) - a script that prints the addition of 2 integers
 - The first argument is the first integer
 - The second argument is the second integer
-- You have to define a function with this prototype: `function add(a, b)`
+- Define a function with this prototype: `function add(a, b)`
+
+[10-factorial.js](https://github.com/Gbeminiyi-S/alx-higher_level_programming/blob/main/0x12-javascript-warm_up/10-factorial.js) - a script that computes and prints a factorial
+- The first argument is integer (argument can be cast as integer) used for computing the factorial
+- Factorial of `NaN` is `1`
+- Must be done recursively
+- Must use a function
+- Must use console.log(...) to print all output
 
 ### Advanced
