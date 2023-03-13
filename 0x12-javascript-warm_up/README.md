@@ -15,4 +15,14 @@
 - The second line: “Python is cool”
 - The third line: “JavaScript is amazing”
 
+[2-arguments.js](https://github.com/Gbeminiyi-S/alx-higher_level_programming/blob/main/0x12-javascript-warm_up/2-arguments.js) - a script that prints a message depending of the number of arguments passed:
+- If no arguments are passed to the script, print “No argument”
+- If only one argument is passed to the script, print “Argument found”
+- Otherwise, print “Arguments found”
+
+[3-value_argument.js](https://github.com/Gbeminiyi-S/alx-higher_level_programming/blob/main/0x12-javascript-warm_up/3-value_argument.js) - a script that prints the first argument passed to it:
+- If no arguments are passed to the script, print “No argument”
+- Not allowed to use `var`
+- Not allowed to use `length`
+
 ### Advanced
