@@ -25,4 +25,18 @@
 - Not allowed to use `var`
 - Not allowed to use `length`
 
+[4-concat.js](https://github.com/Gbeminiyi-S/alx-higher_level_programming/blob/main/0x12-javascript-warm_up/4-concat.js) - a script that prints two arguments passed to it, in the following format: "is"
+
+[5-to_integer.js](https://github.com/Gbeminiyi-S/alx-higher_level_programming/blob/main/0x12-javascript-warm_up/5-to_integer.js) - a script that prints `My number: <first argument converted in integer>` if the first argument can be converted to an integer:
+- If the argument can’t be converted to an integer, print “Not a number”
+
+[6-multi_languages_loop.js](https://github.com/Gbeminiyi-S/alx-higher_level_programming/blob/main/0x12-javascript-warm_up/6-multi_languages_loop.js) - a script that prints 3 lines: (like [1-multi_languages.js](https://github.com/Gbeminiyi-S/alx-higher_level_programming/blob/main/0x12-javascript-warm_up/1-multi_languages.js)) but by using an array of string and a loop
+- The first line: “C is fun”
+- The second line: “Python is cool”
+- The third line: “JavaScript is amazing”
+
+[7-multi_c.js](https://github.com/Gbeminiyi-S/alx-higher_level_programming/blob/main/0x12-javascript-warm_up/7-multi_c.js) - a script that prints `x` times “C is fun”
+- `x` is the first argument of the script
+- If the first argument can’t be converted to an integer, print “Missing number of occurrences”
+
 ### Advanced
