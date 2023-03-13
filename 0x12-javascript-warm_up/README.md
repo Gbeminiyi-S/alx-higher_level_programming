@@ -39,4 +39,14 @@
 - `x` is the first argument of the script
 - If the first argument can’t be converted to an integer, print “Missing number of occurrences”
 
+[8-square.js](https://github.com/Gbeminiyi-S/alx-higher_level_programming/blob/main/0x12-javascript-warm_up/8-square.js) - a script that prints a square
+- The first argument is the size of the square
+- If the first argument can’t be converted to an integer, print “Missing size”
+- use the character X to print the square
+
+[9-add.js](https://github.com/Gbeminiyi-S/alx-higher_level_programming/blob/main/0x12-javascript-warm_up/9-add.js) - a script that prints the addition of 2 integers
+- The first argument is the first integer
+- The second argument is the second integer
+- You have to define a function with this prototype: `function add(a, b)`
+
 ### Advanced
