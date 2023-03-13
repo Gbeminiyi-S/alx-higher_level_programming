@@ -2,8 +2,7 @@
 const itr = Number(process.argv[2]);
 if (isNaN(itr)) {
   console.log('Missing number of occurrences');
-}
-else {
+} else {
   for (let i = 0; i < itr; i++) {
     console.log('C is fun');
   }
