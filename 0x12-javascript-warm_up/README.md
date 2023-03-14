@@ -76,3 +76,10 @@
 - The function must be visible from outside
 - Prototype: `function (x, theFunction)`
 - not allowed to use `var`
+
+[102-add_me_maybe.js](https://github.com/Gbeminiyi-S/alx-higher_level_programming/blob/main/0x12-javascript-warm_up/102-add_me_maybe.js) - a function that increments and calls a function
+- The function must be visible from outside
+- Prototype: `function (number, theFunction)`
+- Not allowed to use `var`
+
+[103-object_fct.js](https://github.com/Gbeminiyi-S/alx-higher_level_programming/blob/main/0x12-javascript-warm_up/103-object_fct.js) - Update this [script](https://github.com/Gbeminiyi-S/alx-higher_level_programming/blob/main/0x12-javascript-warm_up/test-cases/103-object_fct.js) by adding a new function `incr` that increments the integer `value`
