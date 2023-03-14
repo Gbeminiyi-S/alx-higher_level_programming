@@ -56,4 +56,23 @@
 - Must use a function
 - Must use console.log(...) to print all output
 
+[11-second_biggest.js](https://github.com/Gbeminiyi-S/alx-higher_level_programming/blob/main/0x12-javascript-warm_up/11-second_biggest.js) - a script that searches the second biggest integer in the list of arguments
+- If no argument passed, print `0`
+- If the number of arguments is `1`, print `0`
+- not allowed to use `var`
+
+[12-object.js](https://github.com/Gbeminiyi-S/alx-higher_level_programming/blob/main/0x12-javascript-warm_up/12-object.js) - Update this [script](https://github.com/Gbeminiyi-S/alx-higher_level_programming/blob/main/0x12-javascript-warm_up/test-cases/12-object.js) to replace the value 12 with 89
+- not allowed to use `var`
+
+[13-add.js](https://github.com/Gbeminiyi-S/alx-higher_level_programming/blob/main/0x12-javascript-warm_up/13-add.js) - a function that returns the addition of 2 integers
+- The function must be visible from outside
+- The name of the function must be `add`
+- Not allowed to use `var`
+
 ### Advanced
+[100-let_me_const.js](https://github.com/Gbeminiyi-S/alx-higher_level_programming/blob/main/0x12-javascript-warm_up/100-let_me_const.js) - a file that modifies the value of `myVar` to `333`
+
+[101-call_me_moby.js](https://github.com/Gbeminiyi-S/alx-higher_level_programming/blob/main/0x12-javascript-warm_up/101-call_me_moby.js) - a function that executes `x` times a function
+- The function must be visible from outside
+- Prototype: `function (x, theFunction)`
+- not allowed to use `var`
