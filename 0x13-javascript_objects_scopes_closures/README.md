@@ -35,4 +35,22 @@
  [7-occurrences.js](https://github.com/Gbeminiyi-S/alx-higher_level_programming/blob/main/0x13-javascript_objects_scopes_closures/7-occurrences.js) - a function that returns the number of occurrences in a list
 - Prototype: `exports.nbOccurences = function (list, searchElement)`
 
+[8-esrever.js](https://github.com/Gbeminiyi-S/alx-higher_level_programming/blob/main/0x13-javascript_objects_scopes_closures/8-esrever.js) - a function that returns the reversed version of a list
+- Prototype: `exports.esrever = function (list)`
+- Not allow to use the built-in method `reverse`
+
+[9-logme.js](https://github.com/Gbeminiyi-S/alx-higher_level_programming/blob/main/0x13-javascript_objects_scopes_closures/9-logme.js) - a function that prints the number of arguments already printed and the new argument value
+- Prototype: `exports.logMe = function (item)`
+- Output format: `<number arguments already printed>: <current argument value>`
+
+[10-converter.js](https://github.com/Gbeminiyi-S/alx-higher_level_programming/blob/main/0x13-javascript_objects_scopes_closures/10-converter.js) - a function that converts a number from base 10 to another base passed as argument
+- Prototype: `exports.converter = function (base)`
+- Not allowed to import any file
+- Not allowed to declare any new variable (`var`, `let`, etc..)
+
 ### Advanced
+[100-map.js](https://github.com/Gbeminiyi-S/alx-higher_level_programming/blob/main/0x13-javascript_objects_scopes_closures/100-map.js) - a script that imports an array and computes a new array
+- The script must import `list` from the file `100-data.js`
+- Use a `map`
+- A new list must be created with each value equal to the value of the initial list, multipled by the index in the list
+- Print both the initial list and the new list
