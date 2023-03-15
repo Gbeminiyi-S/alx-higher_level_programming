@@ -63,9 +63,9 @@
 - Print the new dictionary at the end
 
 [102-concat.js](https://github.com/Gbeminiyi-S/alx-higher_level_programming/blob/main/0x13-javascript_objects_scopes_closures/102-concat.js) - a script that concats 2 files.
-- The first argument is the file path of the first source file
-- The second argument is the file path of the second source file
-- The third argument is the file path of the destination
+- The first argument is the file path of the [first source file](https://github.com/Gbeminiyi-S/alx-higher_level_programming/blob/main/0x13-javascript_objects_scopes_closures/test_cases/fileA)
+- The second argument is the file path of the [second source file](https://github.com/Gbeminiyi-S/alx-higher_level_programming/blob/main/0x13-javascript_objects_scopes_closures/test_cases/fileB)
+- The third argument is the [file path of the destination](https://github.com/Gbeminiyi-S/alx-higher_level_programming/blob/main/0x13-javascript_objects_scopes_closures/test_cases/fileC)
 ```
 guillaume@ubuntu:~/0x13$ cat fileA
 C is fun!
