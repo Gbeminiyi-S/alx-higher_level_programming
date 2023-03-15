@@ -50,7 +50,7 @@
 
 ### Advanced
 [100-map.js](https://github.com/Gbeminiyi-S/alx-higher_level_programming/blob/main/0x13-javascript_objects_scopes_closures/100-map.js) - a script that imports an array and computes a new array
-- The script must import `list` from the file `100-data.js`
+- The script must import `list` from the file [100-data.js](https://github.com/Gbeminiyi-S/alx-higher_level_programming/blob/main/0x13-javascript_objects_scopes_closures/test_cases/100-data.js)
 - Use a `map`
 - A new list must be created with each value equal to the value of the initial list, multipled by the index in the list
 - Print both the initial list and the new list
@@ -66,3 +66,14 @@
 - The first argument is the file path of the first source file
 - The second argument is the file path of the second source file
 - The third argument is the file path of the destination
+```
+guillaume@ubuntu:~/0x13$ cat fileA
+C is fun!
+guillaume@ubuntu:~/0x13$ cat fileB
+Python is Cool!!!
+guillaume@ubuntu:~/0x13$ ./102-concat.js fileA fileB fileC
+guillaume@ubuntu:~/0x13$ cat fileC
+C is fun!
+Python is Cool!!!
+guillaume@ubuntu:~/0x13$ 
+```
