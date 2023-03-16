@@ -1,8 +1,11 @@
 #!/usr/bin/python3
 import MySQLdb
-db = MySQLdb.connect(host="localhost", user="root", passwd="",
-                     db="hbtn_0e_0_usa")
+import sys
+
+if __name__ = "__main__":
+db = MySQLdb.connect(host="localhost", user=sys.argv[1], passwd=sys.argv[2],
+                     db=sys.argv[3])
 cursor = db.cursor()
 cursor.execute("SELECT id, name FROM states")
 for state in cursor:
-    print(f"({state[0]}, '{state[1]}')")
+    print(state)
