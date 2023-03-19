@@ -19,10 +19,13 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    # Query all State objects from the database and order by states.id
-    state = session.query(State).order_by(State.id).first()
+    # Query the first State object from the database
+    first_state = session.query(State).first()
 
-    # Print the State objects in the format specified
-    print("{}: {}".format(state.id, state.name))
+    # Print the State objects in the format speciified
+    if first_state is None:
+        print("Nothing")
+    else:
+        print("{}: {}".format(first_state.id, first_state.name))
 
     session.close()
