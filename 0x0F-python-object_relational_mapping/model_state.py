@@ -1,20 +1,21 @@
 #!/usr/bin/python3
-""" Defines a class 'State'"""
-from sqlalchemy import create_engine, Column, Integer, String
+# Defines a State class
+# Inherits from SQLAlchemy Base and links to the MySQL table states
+
+from sqlalchemy import Column, Integer, String
 from sqlalchemy.ext.declarative import declarative_base
-import sys
 
 Base = declarative_base()
 
 
 class State(Base):
-    """Creates a column in the table"""
-    __tablename__ = "states"
+    """ Represents a state column for a MySQL table
 
+    __tablename__ (str): The name of the MySQL table to store States.
+    id (sqlalchemy.Integer): The state's id.
+    name (sqlalchemy.String): The state's name.
+
+    """
+    __tablename__ = "states"
     id = Column(Integer, primary_key=True, autoincrement=True, nullable=False)
     name = Column(String(128), nullable=False)
-
-    path = sys.argv
-    engine = create_engine(f"mysql+mysqldb://{path[1]}:{path[2]}@localhost/{path[3]}")
-
-    Base.metadata.create_all(engine)
