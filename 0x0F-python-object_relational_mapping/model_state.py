@@ -14,9 +14,7 @@ class State(Base):
     id = Column(Integer, primary_key=True, autoincrement=True, nullable=False)
     name = Column(String(128), nullable=False)
 
-    # Create an engine that connects to MySQL
-    engine = create_engine(f"mysql+mysqldb://{sys.argv[1]}\
-            :{sys.argv[2]}@localhost/{sys.argv[3]}")
+    path = sys.argv
+    engine = create_engine(f"mysql+mysqldb://{path[1]}:{path[2]}@localhost/{path[3]}")
 
-    # Create the tables in the database
     Base.metadata.create_all(engine)
