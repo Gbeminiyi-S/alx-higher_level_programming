@@ -14,3 +14,6 @@ if __name__ == "__main__":
 
     for city in cities:
         print(city)
+
+    cursor.close()
+    db.close()
