@@ -44,4 +44,105 @@ guillaume@ubuntu:~/0x0F$ ./0-select_states.py root root hbtn_0e_0_usa
 (5, 'Nevada')
 ```
 
+[1-filter_states.py](https://github.com/Gbeminiyi-S/alx-higher_level_programming/blob/main/0x0F-python-object_relational_mapping/1-filter_states.py) - a script that lists all `states` with a `name` starting with `N` (upper N) from the database `hbtn_0e_0_usa`
+- The script should take 3 arguments: `mysql username`, `mysql password` and `database name` (no argument validation needed)
+- Results must be sorted in ascending order by `states.id`
+- The code should not be executed when imported
+```
+guillaume@ubuntu:~/0x0F$ cat 0-select_states.sql | mysql -uroot -p
+Enter password: 
+guillaume@ubuntu:~/0x0F$ ./1-filter_states.py root root hbtn_0e_0_usa
+(4, 'New York')
+(5, 'Nevada')
+```
+
+[2-my_filter_states.py](https://github.com/Gbeminiyi-S/alx-higher_level_programming/blob/main/0x0F-python-object_relational_mapping/2-my_filter_states.py) - a script that takes in an argument and displays all values in the `states` table of `hbtn_0e_0_usa` where `name` matches the argument
+- The script should take 4 arguments: `mysql username`, `mysql password`, `database name` and `state name searched` (no argument validation needed)
+- Use `format` to create the SQL query with the user input
+- Results must be sorted in ascending order by `states.id`
+- The code should not be executed when imported
+```
+guillaume@ubuntu:~/0x0F$ cat 0-select_states.sql | mysql -uroot -p
+Enter password: 
+guillaume@ubuntu:~/0x0F$ ./2-my_filter_states.py root root hbtn_0e_0_usa 'Arizona'
+(2, 'Arizona')
+```
+
+[3-my_safe_filter_states.py](https://github.com/Gbeminiyi-S/alx-higher_level_programming/blob/main/0x0F-python-object_relational_mapping/3-my_safe_filter_states.py) - 
+a script that takes in arguments and displays all values in the states table of hbtn_0e_0_usa where name matches the argument. But this time, it is safe from MySQL injections!
+- The script should take 4 arguments: `mysql username`, `mysql password`, `database name` and `state name searched` (safe from MySQL injection)
+- Results must be sorted in ascending order by `states.id`
+- The code should not be executed when imported
+```
+guillaume@ubuntu:~/0x0F$ cat 0-select_states.sql | mysql -uroot -p
+Enter password: 
+guillaume@ubuntu:~/0x0F$ ./2-my_filter_states.py root root hbtn_0e_0_usa 'Arizona'
+(2, 'Arizona')
+```
+
+[4-cities_by_state.py](https://github.com/Gbeminiyi-S/alx-higher_level_programming/blob/main/0x0F-python-object_relational_mapping/4-cities_by_state.py) - a script that lists all `cities` from the database `hbtn_0e_4_usa`
+- The script should take 3 arguments: `mysql username`, `mysql password` and `database name`
+- Only use `execute()` once
+- Results must be sorted in ascending order by `cities.id`
+- The code should not be executed when imported
+```
+guillaume@ubuntu:~/0x0F$ cat 4-cities_by_state.sql
+-- Create states table in hbtn_0e_4_usa with some data
+CREATE DATABASE IF NOT EXISTS hbtn_0e_4_usa;
+USE hbtn_0e_4_usa;
+CREATE TABLE IF NOT EXISTS states ( 
+    id INT NOT NULL AUTO_INCREMENT, 
+    name VARCHAR(256) NOT NULL,
+    PRIMARY KEY (id)
+);
+INSERT INTO states (name) VALUES ("California"), ("Arizona"), ("Texas"), ("New York"), ("Nevada");
+
+CREATE TABLE IF NOT EXISTS cities ( 
+    id INT NOT NULL AUTO_INCREMENT, 
+    state_id INT NOT NULL,
+    name VARCHAR(256) NOT NULL,
+    PRIMARY KEY (id),
+    FOREIGN KEY(state_id) REFERENCES states(id)
+);
+INSERT INTO cities (state_id, name) VALUES (1, "San Francisco"), (1, "San Jose"), (1, "Los Angeles"), (1, "Fremont"), (1, "Livermore");
+INSERT INTO cities (state_id, name) VALUES (2, "Page"), (2, "Phoenix");
+INSERT INTO cities (state_id, name) VALUES (3, "Dallas"), (3, "Houston"), (3, "Austin");
+INSERT INTO cities (state_id, name) VALUES (4, "New York");
+INSERT INTO cities (state_id, name) VALUES (5, "Las Vegas"), (5, "Reno"), (5, "Henderson"), (5, "Carson City");
+
+guillaume@ubuntu:~/0x0F$ cat 4-cities_by_state.sql | mysql -uroot -p
+Enter password: 
+guillaume@ubuntu:~/0x0F$ ./4-cities_by_state.py root root hbtn_0e_4_usa
+(1, 'San Francisco', 'California')
+(2, 'San Jose', 'California')
+(3, 'Los Angeles', 'California')
+(4, 'Fremont', 'California')
+(5, 'Livermore', 'California')
+(6, 'Page', 'Arizona')
+(7, 'Phoenix', 'Arizona')
+(8, 'Dallas', 'Texas')
+(9, 'Houston', 'Texas')
+(10, 'Austin', 'Texas')
+(11, 'New York', 'New York')
+(12, 'Las Vegas', 'Nevada')
+(13, 'Reno', 'Nevada')
+(14, 'Henderson', 'Nevada')
+(15, 'Carson City', 'Nevada')
+guillaume@ubuntu:~/0x0F$ 
+```
+
+[5-filter_cities.py](https://github.com/Gbeminiyi-S/alx-higher_level_programming/blob/main/0x0F-python-object_relational_mapping/5-filter_cities.py) - a script that takes in the name of a state as an argument and lists all `cities` of that state, using the database `hbtn_0e_4_usa`
+- The script should take 4 arguments: `mysql username`, `mysql password`, `database name` and `state name searched` (safe from MySQL injection)
+- Only use `execute()` once
+- Results must be sorted in ascending order by `cities.id`
+- The code should not be executed when imported
+
+[model_state.py](https://github.com/Gbeminiyi-S/alx-higher_level_programming/blob/main/0x0F-python-object_relational_mapping/) - a python file that contains the class definition of a `State` and an instance `Base = declarative_base()`
+- `State` class:
+    - inherits from `Base`
+    - links to the MySQL table `states`
+    - class attribute `id` that represents a column of an auto-generated, unique integer, can’t be null and is a primary key
+    - class attribute `name` that represents a column of a string with maximum 128 characters and can’t be null
+- Use the module `SQLAlchemy`
+
 ### Advanced
