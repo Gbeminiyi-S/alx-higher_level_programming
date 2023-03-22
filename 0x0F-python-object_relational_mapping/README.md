@@ -390,3 +390,90 @@ id  name    state_id
 1   San Francisco   1
 guillaume@ubuntu:~/0x0F$ 
 ```
+
+[101-relationship_states_cities_list.py](https://github.com/Gbeminiyi-S/alx-higher_level_programming/blob/main/0x0F-python-object_relational_mapping/101-relationship_states_cities_list.py) - a script that lists all `State` objects, and corresponding `City` objects, contained in the database `hbtn_0e_101_usa`
+- The script should take 3 arguments: `mysql username`, `mysql password` and `database name`
+- Must use the `cities` relationship for all `State` objects
+- Results must be sorted in ascending order by `states.id` and `cities.id`
+- The code should not be executed when imported
+```
+<state id>: <state name>
+<tabulation><city id>: <city name>
+```
+```
+guillaume@ubuntu:~/0x0F$ cat 101-relationship_states_cities_list.sql
+-- Create states table in hbtn_0e_101_usa with some data
+CREATE DATABASE IF NOT EXISTS hbtn_0e_101_usa;
+USE hbtn_0e_101_usa;
+CREATE TABLE IF NOT EXISTS states ( 
+    id INT NOT NULL AUTO_INCREMENT, 
+    name VARCHAR(256) NOT NULL,
+    PRIMARY KEY (id)
+);
+INSERT INTO states (name) VALUES ("California"), ("Arizona"), ("Texas"), ("New York"), ("Nevada");
+
+CREATE TABLE IF NOT EXISTS cities ( 
+    id INT NOT NULL AUTO_INCREMENT, 
+    state_id INT NOT NULL,
+    name VARCHAR(256) NOT NULL,
+    PRIMARY KEY (id),
+    FOREIGN KEY(state_id) REFERENCES states(id)
+);
+INSERT INTO cities (state_id, name) VALUES (1, "San Francisco"), (1, "San Jose"), (1, "Los Angeles"), (1, "Fremont"), (1, "Livermore");
+INSERT INTO cities (state_id, name) VALUES (2, "Page"), (2, "Phoenix");
+INSERT INTO cities (state_id, name) VALUES (3, "Dallas"), (3, "Houston"), (3, "Austin");
+INSERT INTO cities (state_id, name) VALUES (4, "New York");
+INSERT INTO cities (state_id, name) VALUES (5, "Las Vegas"), (5, "Reno"), (5, "Henderson"), (5, "Carson City");
+
+guillaume@ubuntu:~/0x0F$ cat 101-relationship_states_cities_list.sql | mysql -uroot -p
+guillaume@ubuntu:~/0x0F$ ./101-relationship_states_cities_list.py root root hbtn_0e_101_usa
+1: California
+    1: San Francisco
+    2: San Jose
+    3: Los Angeles
+    4: Fremont
+    5: Livermore
+2: Arizona
+    6: Page
+    7: Phoenix
+3: Texas
+    8: Dallas
+    9: Houston
+    10: Austin
+4: New York
+    11: New York
+5: Nevada
+    12: Las Vegas
+    13: Reno
+    14: Henderson
+    15: Carson City
+guillaume@ubuntu:~/0x0F$ 
+```
+
+[102-relationship_cities_states_list.py](https://github.com/Gbeminiyi-S/alx-higher_level_programming/blob/main/0x0F-python-object_relational_mapping/102-relationship_cities_states_list.py) - a script that lists all `City` objects from the database `hbtn_0e_101_usa`
+- The script should take 3 arguments: `mysql username`, `mysql password` and `database name`
+- Must use the `state` relationship to access to the `State` object linked to the `City` object
+- Results must be sorted in ascending order by `cities.id`
+- The code should not be executed when imported
+```
+<city id>: <city name> -> <state name>
+```
+```
+guillaume@ubuntu:~/0x0F$ ./102-relationship_cities_states_list.py root root hbtn_0e_101_usa
+1: San Francisco -> California
+2: San Jose -> California
+3: Los Angeles -> California
+4: Fremont -> California
+5: Livermore -> California
+6: Page -> Arizona
+7: Phoenix -> Arizona
+8: Dallas -> Texas
+9: Houston -> Texas
+10: Austin -> Texas
+11: New York -> New York
+12: Las Vegas -> Nevada
+13: Reno -> Nevada
+14: Henderson -> Nevada
+15: Carson City -> Nevada
+guillaume@ubuntu:~/0x0F$ 
+```
