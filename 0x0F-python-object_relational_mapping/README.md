@@ -297,4 +297,96 @@ guillaume@ubuntu:~/0x0F$ ./7-model_state_fetch_all.py root root hbtn_0e_6_usa
 guillaume@ubuntu:~/0x0F$ 
 ```
 
+[model_city.py](https://github.com/Gbeminiyi-S/alx-higher_level_programming/blob/main/0x0F-python-object_relational_mapping/model_city.py) - a Python file similar to `model_state.py` named `model_city.py` that contains the class definition of a `City`.
+
+`City` class:
+- inherits from `Base` (imported from `model_state`)
+- links to the MySQL table `cities`
+- class attribute `id` that represents a column of an auto-generated, unique integer, can’t be null and is a primary key
+- class attribute `name` that represents a column of a string of 128 characters and can’t be null
+- class attribute `state_id` that represents a column of an integer, can’t be null and is a foreign key to `states.id`
+- Must use the module `SQLAlchemy`
+
+[14-model_city_fetch_by_state.py](https://github.com/Gbeminiyi-S/alx-higher_level_programming/blob/main/0x0F-python-object_relational_mapping/14-model_city_fetch_by_state.py) - a script `14-model_city_fetch_by_state.py` that prints all `City` objects from the database `hbtn_0e_14_usa`
+```
+- The script should take 3 arguments: `mysql username`, `mysql password` and `database name`
+- Import `State` and `Base` from `model_state` - `from model_state import Base, State`
+- ResultsResults must be display as they are in the example below (`<state name>: (<city id>) <city name>`) must be sorted in ascending order by `cities.id`
+- The code should not be executed when imported
+```guillaume@ubuntu:~/0x0F$ cat 14-model_city_fetch_by_state.sql
+-- Create database hbtn_0e_14_usa, tables states and cities + some data
+CREATE DATABASE IF NOT EXISTS hbtn_0e_14_usa;
+USE hbtn_0e_14_usa;
+
+CREATE TABLE IF NOT EXISTS states ( 
+    id INT NOT NULL AUTO_INCREMENT, 
+    name VARCHAR(256) NOT NULL,
+    PRIMARY KEY (id)
+);
+INSERT INTO states (name) VALUES ("California"), ("Arizona"), ("Texas"), ("New York"), ("Nevada");
+
+CREATE TABLE IF NOT EXISTS cities ( 
+    id INT NOT NULL AUTO_INCREMENT, 
+    state_id INT NOT NULL,
+    name VARCHAR(256) NOT NULL,
+    PRIMARY KEY (id),
+    FOREIGN KEY(state_id) REFERENCES states(id)
+);
+INSERT INTO cities (state_id, name) VALUES (1, "San Francisco"), (1, "San Jose"), (1, "Los Angeles"), (1, "Fremont"), (1, "Livermore");
+INSERT INTO cities (state_id, name) VALUES (2, "Page"), (2, "Phoenix");
+INSERT INTO cities (state_id, name) VALUES (3, "Dallas"), (3, "Houston"), (3, "Austin");
+INSERT INTO cities (state_id, name) VALUES (4, "New York");
+INSERT INTO cities (state_id, name) VALUES (5, "Las Vegas"), (5, "Reno"), (5, "Henderson"), (5, "Carson City");
+
+guillaume@ubuntu:~/0x0F$ cat 14-model_city_fetch_by_state.sql | mysql -uroot -p
+Enter password: 
+guillaume@ubuntu:~/0x0F$ ./14-model_city_fetch_by_state.py root root hbtn_0e_14_usa
+California: (1) San Francisco
+California: (2) San Jose
+California: (3) Los Angeles
+California: (4) Fremont
+California: (5) Livermore
+Arizona: (6) Page
+Arizona: (7) Phoenix
+Texas: (8) Dallas
+Texas: (9) Houston
+Texas: (10) Austin
+New York: (11) New York
+Nevada: (12) Las Vegas
+Nevada: (13) Reno
+Nevada: (14) Henderson
+Nevada: (15) Carson City
+guillaume@ubuntu:~/0x0F$ 
+```
 ### Advanced
+[relationship_city.py](https://github.com/Gbeminiyi-S/alx-higher_level_programming/blob/main/0x0F-python-object_relational_mapping/relationship_city.py) and [relationship_state.py](https://github.com/Gbeminiyi-S/alx-higher_level_programming/blob/main/0x0F-python-object_relational_mapping/relationship_state.py) - Improves the files `model_city.py` and `model_state.py`, and saves them as `relationship_city.py` and `relationship_state.py`:
+- `City` class:
+    - No change
+- `State` class:
+    - In addition to previous requirements, the class attribute `cities` must represent a relationship with the class `City`. If the `State` object is deleted, all linked `City` objects must be automatically deleted. Also, the reference from a `City` object to his `State` should be named `state`
+    
+[100-relationship_states_cities.py](https://github.com/Gbeminiyi-S/alx-higher_level_programming/blob/main/0x0F-python-object_relational_mapping/100-relationship_states_cities.py) -  a script that creates the `State` "California" with the City "San Francisco" from the database `hbtn_0e_100_usa`: (`100-relationship_states_cities.py`)
+- The script should take 3 arguments: `mysql username`, `mysql password` and `database name`
+- Must use the `cities` relationship for all `State` objects
+- The code should not be executed when imported
+```
+guillaume@ubuntu:~/0x0F$ cat 100-relationship_states_cities.sql
+-- Create the database hbtn_0e_100_usa
+CREATE DATABASE IF NOT EXISTS hbtn_0e_100_usa;
+USE hbtn_0e_100_usa;
+
+SELECT * FROM states;
+SELECT * FROM cities;
+
+guillaume@ubuntu:~/0x0F$ cat 100-relationship_states_cities.sql | mysql -uroot -p
+Enter password: 
+ERROR 1146 (42S02) at line 5: Table 'hbtn_0e_100_usa.states' doesn't exist
+guillaume@ubuntu:~/0x0F$ ./100-relationship_states_cities.py root root hbtn_0e_100_usa
+guillaume@ubuntu:~/0x0F$ cat 100-relationship_states_cities.sql | mysql -uroot -p
+Enter password: 
+id  name
+1   California
+id  name    state_id
+1   San Francisco   1
+guillaume@ubuntu:~/0x0F$ 
+```
