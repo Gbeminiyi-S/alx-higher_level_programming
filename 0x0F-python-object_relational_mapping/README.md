@@ -214,5 +214,87 @@ guillaume@ubuntu:~/0x0F$
 - Import `State` and `Base` from `model_state` - `from model_state import Base, State`
 - Results must be sorted in ascending order by `states.id`
 - The code should not be executed when imported
+```
+guillaume@ubuntu:~/0x0F$ ./9-model_state_filter_a.py root root hbtn_0e_6_usa
+1: California
+2: Arizona
+3: Texas
+5: Nevada
+guillaume@ubuntu:~/0x0F$
+```
+
+[9-model_state_filter_a.py](https://github.com/Gbeminiyi-S/alx-higher_level_programming/blob/main/0x0F-python-object_relational_mapping/9-model_state_filter_a.py) - a script that lists all `State` objects that contain the letter `a` from the database `hbtn_0e_6_usa`
+- The script should take 3 arguments: `mysql username`, `mysql password` and `database name`
+- Import `State` and `Base` from `model_state` - `from model_state import Base, State`
+- Results must be sorted in ascending order by `states.id`
+- The code should not be executed when imported
+```
+guillaume@ubuntu:~/0x0F$ ./9-model_state_filter_a.py root root hbtn_0e_6_usa
+1: California
+2: Arizona
+3: Texas
+5: Nevada
+guillaume@ubuntu:~/0x0F$ 
+```
+[10-model_state_my_get.py](https://github.com/Gbeminiyi-S/alx-higher_level_programming/blob/main/0x0F-python-object_relational_mapping/10-model_state_my_get.py) - a script that prints the `State` object with the `name` passed as argument from the database `hbtn_0e_6_usa`
+- The script should take 4 arguments: `mysql username`, `mysql password`, `database name` and `state name to search`  (SQL injection free)
+- Import `State` and `Base` from `model_state` - `from model_state import Base, State`
+- Results must display the `states.id`
+- If no state has the name you searched for, `display Not found`
+- The code should not be executed when imported
+```
+guillaume@ubuntu:~/0x0F$ ./10-model_state_my_get.py root root hbtn_0e_6_usa Texas
+3
+guillaume@ubuntu:~/0x0F$ ./10-model_state_my_get.py root root hbtn_0e_6_usa Illinois
+Not found
+guillaume@ubuntu:~/0x0F$
+```
+
+[11-model_state_insert.py](https://github.com/Gbeminiyi-S/alx-higher_level_programming/blob/main/0x0F-python-object_relational_mapping/11-model_state_insert.py) -  a script that adds the `State `object "Louisiana" to the database `hbtn_0e_6_usa`
+- The script should take 3 arguments: `mysql username`, `mysql password` and `database name`
+- Import `State` and `Base` from `model_state` - `from model_state import Base, State`
+- Print the new `states.id` after creation
+- The code should not be executed when imported
+```
+guillaume@ubuntu:~/0x0F$ ./11-model_state_insert.py root root hbtn_0e_6_usa 
+6
+guillaume@ubuntu:~/0x0F$ ./7-model_state_fetch_all.py root root hbtn_0e_6_usa 
+1: California
+2: Arizona
+3: Texas
+4: New York
+5: Nevada
+6: Louisiana
+guillaume@ubuntu:~/0x0F$ 
+```
+
+[12-model_state_update_id_2.py](https://github.com/Gbeminiyi-S/alx-higher_level_programming/blob/main/0x0F-python-object_relational_mapping/12-model_state_update_id_2.py) - a script that changes the name of a `State` object from the database `hbtn_0e_6_usa`
+- The script should take 3 arguments: `mysql username`, `mysql password` and `database name`
+- Import `State` and `Base` from `model_state` - `from model_state import Base, State`
+- Change the name of the `State` where `id = 2` to `New Mexico`
+- The code should not be executed when imported
+```
+guillaume@ubuntu:~/0x0F$ ./12-model_state_update_id_2.py root root hbtn_0e_6_usa 
+guillaume@ubuntu:~/0x0F$ ./7-model_state_fetch_all.py root root hbtn_0e_6_usa 
+1: California
+2: New Mexico
+3: Texas
+4: New York
+5: Nevada
+6: Louisiana
+guillaume@ubuntu:~/0x0F$
+```
+
+[13-model_state_delete_a.py](https://github.com/Gbeminiyi-S/alx-higher_level_programming/blob/main/0x0F-python-object_relational_mapping/13-model_state_delete_a.py) - a script that deletes all `State` objects with a name containing the letter `a` from the database `hbtn_0e_6_usa`
+- The script should take 3 arguments: `mysql username`, `mysql password` and `database name`
+- Import `State` and `Base` from `model_state` - `from model_state import Base, State`
+- The code should not be executed when imported
+```
+guillaume@ubuntu:~/0x0F$ ./13-model_state_delete_a.py root root hbtn_0e_6_usa 
+guillaume@ubuntu:~/0x0F$ ./7-model_state_fetch_all.py root root hbtn_0e_6_usa 
+2: New Mexico
+4: New York
+guillaume@ubuntu:~/0x0F$ 
+```
 
 ### Advanced
