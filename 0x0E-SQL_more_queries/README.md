@@ -10,8 +10,8 @@ An introductory project on:
 - What are subqueries
 - What are `JOIN` and `UNION`
 
-# Projects
-## Mandatory
+## Projects
+### Mandatory
 [0-privileges.sql](https://github.com/Gbeminiyi-S/alx-higher_level_programming/edit/main/0x0E-SQL_more_queries/0-privileges.sql) -  a script that lists all privileges of the MySQL users `user_0d_1` and `user_0d_2` on your server (in `localhost`)
 ```
 guillaume@ubuntu:~/$ cat 0-privileges.sql | mysql -hlocalhost -uroot -p
