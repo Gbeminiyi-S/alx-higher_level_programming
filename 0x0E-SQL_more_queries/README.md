@@ -162,119 +162,60 @@ id  name
 guillaume@ubuntu:~/$ 
 ```
 
-[7-model_state_fetch_all.py](https://github.com/Gbeminiyi-S/alx-higher_level_programming/edit/main/0x0E-SQL_more_queries/7-model_state_fetch_all.py) -  a script that lists all `State` objects from the database `hbtn_0e_6_usa`
-- The script should take 3 arguments: `mysql username`, `mysql password` and `database name`
-- Import `State` and `Base` from `model_state` - `from model_state import Base, State`
-- The script should connect to a MySQL server running on `localhost` at port `3306`
-- Results must be sorted in ascending order by `states.id`
-- The code should not be executed when imported
-```
-guillaume@ubuntu:~/0x0F$ cat 7-model_state_fetch_all.sql
--- Insert states
-INSERT INTO states (name) VALUES ("California"), ("Arizona"), ("Texas"), ("New York"), ("Nevada");
+[7-cities.sql](./7-cities.sql): a script that creates the database `hbtn_0d_usa` with a table `cities`
+- `cities` description:
+    - `id`: INT (unique, auto-generated, cannot be null and is a primary key)
+    - `state_id`: INT (cannot be null, foreign key that references to id of the
+    `states` table)
+    - `name`: VARCHAR(256) (cannot be null)
 
-guillaume@ubuntu:~/0x0F$ cat 7-model_state_fetch_all.sql | mysql -uroot -p hbtn_0e_6_usa
-Enter password: 
-guillaume@ubuntu:~/0x0F$ ./7-model_state_fetch_all.py root root hbtn_0e_6_usa
-1: California
-2: Arizona
-3: Texas
-4: New York
-5: Nevada
-guillaume@ubuntu:~/0x0F$ 
-```
 
-[8-model_state_fetch_first.py](https://github.com/Gbeminiyi-S/alx-higher_level_programming/edit/main/0x0E-SQL_more_queries/8-model_state_fetch_first.py) - a script that prints the first `State` object from the database `hbtn_0e_6_usa`
-- The script should take 3 arguments: `mysql username`, `mysql password` and `database name`
-- Import `State` and `Base` from `model_state` - `from model_state import Base, State`
-- The script should connect to a MySQL server running on `localhost` at port `3306`
-- The state you display must be the first in `states.id`
-- Not allowed to fetch all states from the database before displaying the result
-- If the table `states` is empty, print `Nothing` followed by a new line
-- The code should not be executed when imported
-```
-guillaume@ubuntu:~/0x0F$ ./8-model_state_fetch_first.py root root hbtn_0e_6_usa
-1: California
-guillaume@ubuntu:~/0x0F$ 
-```
+[8-cities_of_california_subquery.sql](./8-cities_of_california_subquery.sql): a script that lists all the cities of California that can be found in the database `hbtn_0d_usa`, ordered by ascending `cities.id`
 
-[9-model_state_filter_a.py](https://github.com/Gbeminiyi-S/alx-higher_level_programming/edit/main/0x0E-SQL_more_queries/9-model_state_filter_a.py) - a script that lists all `State` objects that contain the letter `a` from the database `hbtn_0e_6_usa`
-- The script should take 3 arguments: `mysql username`, `mysql password` and `database name`
-- Import `State` and `Base` from `model_state` - `from model_state import Base, State`
-- The script should connect to a MySQL server running on `localhost` at port `3306`
-- Results must be sorted in ascending order by `states.id`
-- The code should not be executed when imported
-```
-guillaume@ubuntu:~/0x0F$ ./9-model_state_filter_a.py root root hbtn_0e_6_usa
-1: California
-2: Arizona
-3: Texas
-5: Nevada
-guillaume@ubuntu:~/0x0F$ 
-```
+[9-cities_by_state_join.sql](./9-cities_by_state_join.sql): a script that lists all cities contained in the database `hbtn_0d_usa`, ordered by ascending `cities.id`
+- Each record should display: `cities.id` - `cities.name` - `states.name`
+- Only one `SELECT` statement
 
-[10-model_state_my_get.py](https://github.com/Gbeminiyi-S/alx-higher_level_programming/edit/main/0x0E-SQL_more_queries/10-model_state_my_get.py) - a script that prints the `State` object with the `name` passed as argument from the database `hbtn_0e_6_usa`
-- The script should take 4 arguments: `mysql username`, `mysql password`, `database name` and `state name to search`(SQL injection free)
-- Import `State` and `Base` from `model_state` - `from model_state import Base, State`
-- The script should connect to a MySQL server running on `localhost` at port `3306`
-- Assume you have one record with the state name to search
-- Results must display the `states.id`
-- If no state has the name you searched for, display `Not found`
-- The code should not be executed when imported
-```
-guillaume@ubuntu:~/0x0F$ ./10-model_state_my_get.py root root hbtn_0e_6_usa Texas
-3
-guillaume@ubuntu:~/0x0F$ ./10-model_state_my_get.py root root hbtn_0e_6_usa Illinois
-Not found
-guillaume@ubuntu:~/0x0F$ 
-```
 
-[11-model_state_insert.py](https://github.com/Gbeminiyi-S/alx-higher_level_programming/edit/main/0x0E-SQL_more_queries/11-model_state_insert.py) - a script that adds the `State` object "Louisiana" to the database `hbtn_0e_6_usa`
-- The script should take 3 arguments: `mysql username`, `mysql password` and `database name`
-- Import `State` and `Base` from `model_state` - `from model_state import Base, State`
-- The script should connect to a MySQL server running on `localhost` at port `3306`
-- Prints the new `states.id` after creation
-- The code should not be executed when imported
-```
-guillaume@ubuntu:~/0x0F$ ./11-model_state_insert.py root root hbtn_0e_6_usa 
-6
-guillaume@ubuntu:~/0x0F$ ./7-model_state_fetch_all.py root root hbtn_0e_6_usa 
-1: California
-2: Arizona
-3: Texas
-4: New York
-5: Nevada
-6: Louisiana
-guillaume@ubuntu:~/0x0F$ 
-```
+[10-genre_id_by_show.sql](./10-genre_id_by_show.sql): a script that lists all shows contained in `hbtn_0d_tvshows` that have at least one genre linked, in order of ascending `tv_shows.title` and `tv_show_genres.genre_id`
+- Only one `SELECT` statement
 
-[12-model_state_update_id_2.py](https://github.com/Gbeminiyi-S/alx-higher_level_programming/edit/main/0x0E-SQL_more_queries/12-model_state_update_id_2.py) - a script that changes the name of a `State` object from the database `hbtn_0e_6_usa`
-- The script should take 3 arguments: `mysql username`, `mysql password` and `database name`
-- Import `State` and `Base` from `model_state` - `from model_state import Base, State`
-- The script should connect to a MySQL server running on `localhost` at port `3306`
-- Change the name of the `State` where `id = 2` to `New Mexico`
-- The code should not be executed when imported
-```
-guillaume@ubuntu:~/0x0F$ ./12-model_state_update_id_2.py root root hbtn_0e_6_usa 
-guillaume@ubuntu:~/0x0F$ ./7-model_state_fetch_all.py root root hbtn_0e_6_usa 
-1: California
-2: New Mexico
-3: Texas
-4: New York
-5: Nevada
-6: Louisiana
-guillaume@ubuntu:~/0x0F$ 
-```
+[11-genre_id_all_shows.sql](./11-genre_id_all_shows.sql): a script that lists all shows contained in the database `hbtn_0d_tvshows`, in order of ascending `tv_shows.title` and `tv_show_genres.genre_id`
+- Each record should display: `tv_shows.title` - `tv_show_genres.genre_id`
+- If a show does not have a genre, displays `NULL`.
 
-[13-model_state_delete_a.py](https://github.com/Gbeminiyi-S/alx-higher_level_programming/edit/main/0x0E-SQL_more_queries/13-model_state_delete_a.py) - a script that deletes all `State` objects with a name containing the letter `a` from the database `hbtn_0e_6_usa`
-- The script should take 3 arguments: `mysql username`, `mysql password` and `database name`
-- Import `State` and `Base` from `model_state` - `from model_state import Base, State`
-- The script should connect to a MySQL server running on `localhost` at port `3306`
-- The code should not be executed when imported
-```
-guillaume@ubuntu:~/0x0F$ ./13-model_state_delete_a.py root root hbtn_0e_6_usa 
-guillaume@ubuntu:~/0x0F$ ./7-model_state_fetch_all.py root root hbtn_0e_6_usa 
-2: New Mexico
-4: New York
-guillaume@ubuntu:~/0x0F$
-```
+
+[12-no_genre.sql](./12-no_genre.sql): a script that lists all shows contained in   `hbtn_0d_tvshows` without a genre linked, in order of ascending `tv_shows.title` and `tv_show_genres.genre_id`.
+
+* **13. Number of shows by genre**
+  * [13-count_shows_by_genre.sql](./13-count_shows_by_genre.sql): MySQL script that lists all genres from
+  `hbtn_0d_tvshows` and displays the number of shows linked to each, in order of descending number of shows linked.
+  * Does not display a genre if it has no linked shows.
+
+* **14. My genres**
+  * [14-my_genres.sql](./14-my_genres.sql): MySQL script that uses the `hbtn_0d_tvshows` database
+  to list all genres of the show Dexter, in order of ascending genre name.
+
+* **15. Only Comedy**
+  * [15-comedy_only.sql](./15-comedy_only.sql): MySQL script that lists all comedy shows in the
+  database `hbtn_0d_tvshows`, in order of ascending show title.
+
+* **16. List shows and genres**
+  * [16-shows_by_genre.sql](./16-shows_by_genre.sql): MySQL script that lists all shows, and all genres
+  linked to that show, from the database `hbtn_0d_tvshows`, in order of ascending show title and genre name.
+
+* **17. Not my genre**
+  * [100-not_my_genres.sql](./100-not_my_genres.sql`) MySQL script that uses the `hbtn_0d_tvshows`
+  database to list all genres not linked to the show Dexter, in order of ascending genre name.
+
+* **18. No Comedy tonight!**
+  * [101-not_a_comedy.sql](./101-not_a_comedy.sql): MySQL script that lists all shows without the
+  genre comedy in the database `hbtn_0d_tvshows`, in order of ascending show title.
+
+* **19. Rotten tomatoes**
+  * [102-rating_shows.sql](./102-rating_shows.sql): MySQL script that lists all shows from
+  `hbtn_0d_tvshows_rate` by their rating, in order of descending rating.
+
+* **20. Best genre**
+  * [103-rating_genres.sql](./103-rating_genres.sql): MySQL script that lists all genres in the
+  database `hbtn_0d_tvshows_rate` by their rating, in order of descending rating.
