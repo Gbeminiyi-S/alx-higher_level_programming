@@ -168,54 +168,305 @@ guillaume@ubuntu:~/$
     - `state_id`: INT (cannot be null, foreign key that references to id of the
     `states` table)
     - `name`: VARCHAR(256) (cannot be null)
-
+- The database name will be passed as an argument of the `mysql` command
+```
+guillaume@ubuntu:~/$ cat 7-cities.sql | mysql -hlocalhost -uroot -p
+Enter password: 
+guillaume@ubuntu:~/$ echo 'INSERT INTO cities (state_id, name) VALUES (1, "San Francisco");' | mysql -hlocalhost -uroot -p hbtn_0d_usa
+Enter password: 
+guillaume@ubuntu:~/$ echo 'SELECT * FROM cities;' | mysql -hlocalhost -uroot -p hbtn_0d_usa
+Enter password: 
+id  state_id    name
+1   1   San Francisco
+guillaume@ubuntu:~/$ echo 'INSERT INTO cities (state_id, name) VALUES (10, "Paris");' | mysql -hlocalhost -uroot -p hbtn_0d_usa
+Enter password: 
+ERROR 1452 (23000) at line 1: Cannot add or update a child row: a foreign key constraint fails (`hbtn_0d_usa`.`cities`, CONSTRAINT `cities_ibfk_1` FOREIGN KEY (`state_id`) REFERENCES `states` (`id`))
+guillaume@ubuntu:~/$ echo 'SELECT * FROM cities;' | mysql -hlocalhost -uroot -p hbtn_0d_usa
+Enter password: 
+id  state_id    name
+1   1   San Francisco
+guillaume@ubuntu:~/$ 
+```
 
 [8-cities_of_california_subquery.sql](./8-cities_of_california_subquery.sql): a script that lists all the cities of California that can be found in the database `hbtn_0d_usa`, ordered by ascending `cities.id`
+- Not allowed to use the JOIN keyword
+- The database name will be passed as an argument of the `mysql` command
+```
+guillaume@ubuntu:~/$ echo 'SELECT * FROM states;' | mysql -hlocalhost -uroot -p hbtn_0d_usa
+Enter password: 
+id  name
+1   California
+2   Arizona
+3   Texas
+4   Utah
+guillaume@ubuntu:~/$ echo 'SELECT * FROM cities;' | mysql -hlocalhost -uroot -p hbtn_0d_usa
+Enter password: 
+id  state_id    name
+1   1   San Francisco
+2   1   San Jose
+4   2   Page
+6   3   Paris
+7   3   Houston
+8   3   Dallas
+guillaume@ubuntu:~/$ cat 8-cities_of_california_subquery.sql | mysql -hlocalhost -uroot -p hbtn_0d_usa
+Enter password: 
+id  name
+1   San Francisco
+2   San Jose
+guillaume@ubuntu:~/$ 
+```
 
 [9-cities_by_state_join.sql](./9-cities_by_state_join.sql): a script that lists all cities contained in the database `hbtn_0d_usa`, ordered by ascending `cities.id`
 - Each record should display: `cities.id` - `cities.name` - `states.name`
-- Only one `SELECT` statement
+- The database name will be passed as an argument of the `mysql` command
+```
+guillaume@ubuntu:~/$ echo 'SELECT * FROM states;' | mysql -hlocalhost -uroot -p hbtn_0d_usa
+Enter password: 
+id  name
+1   California
+2   Arizona
+3   Texas
+4   Utah
+guillaume@ubuntu:~/$ echo 'SELECT * FROM cities;' | mysql -hlocalhost -uroot -p hbtn_0d_usa
+Enter password: 
+id  state_id    name
+1   1   San Francisco
+2   1   San Jose
+4   2   Page
+6   3   Paris
+7   3   Houston
+8   3   Dallas
+guillaume@ubuntu:~/$ cat 9-cities_by_state_join.sql | mysql -hlocalhost -uroot -p hbtn_0d_usa
+Enter password: 
+id  name    name
+1   San Francisco   California
+2   San Jose    California
+4   Page    Arizona
+6   Paris   Texas
+7   Houston Texas
+8   Dallas  Texas
+guillaume@ubuntu:~/$ 
+```
 
-
-[10-genre_id_by_show.sql](./10-genre_id_by_show.sql): a script that lists all shows contained in `hbtn_0d_tvshows` that have at least one genre linked, in order of ascending `tv_shows.title` and `tv_show_genres.genre_id`
-- Only one `SELECT` statement
+[10-genre_id_by_show.sql](./10-genre_id_by_show.sql): a script that lists all shows contained in `hbtn_0d_tvshows` that have at least one genre linked, in order of ascending `tv_shows.title` and `tv_show_genres.genre_id` (Import the database dump from [hbtn_0d_tvshows](https://s3.amazonaws.com/intranet-projects-files/holbertonschool-higher-level_programming+/274/hbtn_0d_tvshows.sql) to your MySQL server)
+- Each record should display: `tv_shows.title` - `tv_show_genres.genre_id`
+```
+guillaume@ubuntu:~/$ cat 10-genre_id_by_show.sql | mysql -hlocalhost -uroot -p hbtn_0d_tvshows
+Enter password: 
+title   genre_id
+Breaking Bad    1
+Breaking Bad    6
+Breaking Bad    7
+Breaking Bad    8
+Dexter  1
+Dexter  2
+Dexter  6
+Dexter  7
+Dexter  8
+Game of Thrones 1
+Game of Thrones 3
+Game of Thrones 4
+House   1
+House   2
+New Girl    5
+Silicon Valley  5
+The Big Bang Theory 5
+The Last Man on Earth   1
+The Last Man on Earth   5
+guillaume@ubuntu:~/$ 
+```
 
 [11-genre_id_all_shows.sql](./11-genre_id_all_shows.sql): a script that lists all shows contained in the database `hbtn_0d_tvshows`, in order of ascending `tv_shows.title` and `tv_show_genres.genre_id`
 - Each record should display: `tv_shows.title` - `tv_show_genres.genre_id`
-- If a show does not have a genre, displays `NULL`.
+- If a show does not have a genre, displays `NULL`
+- The database name will be passed as an argument of the `mysql` command
+```
+guillaume@ubuntu:~/$ cat 11-genre_id_all_shows.sql | mysql -hlocalhost -uroot -p hbtn_0d_tvshows
+Enter password: 
+title   genre_id
+Better Call Saul    NULL
+Breaking Bad    1
+Breaking Bad    6
+Breaking Bad    7
+Breaking Bad    8
+Dexter  1
+Dexter  2
+Dexter  6
+Dexter  7
+Dexter  8
+Game of Thrones 1
+Game of Thrones 3
+Game of Thrones 4
+Homeland    NULL
+House   1
+House   2
+New Girl    5
+Silicon Valley  5
+The Big Bang Theory 5
+The Last Man on Earth   1
+The Last Man on Earth   5
+guillaume@ubuntu:~/$ 
+```
 
+[12-no_genre.sql](./12-no_genre.sql): a script that lists all shows contained in   `hbtn_0d_tvshows` without a genre linked, in order of ascending `tv_shows.title` and `tv_show_genres.genre_id`
+- Each record should display: `tv_shows.title`- `v_show_genres.genre_id`
+- The database name will be passed as an argument of the `mysql` command
+```
+guillaume@ubuntu:~/$ cat 12-no_genre.sql | mysql -hlocalhost -uroot -p hbtn_0d_tvshows
+Enter password: 
+title   genre_id
+Better Call Saul    NULL
+Homeland    NULL
+guillaume@ubuntu:~/$ 
+```
 
-[12-no_genre.sql](./12-no_genre.sql): a script that lists all shows contained in   `hbtn_0d_tvshows` without a genre linked, in order of ascending `tv_shows.title` and `tv_show_genres.genre_id`.
+[13-count_shows_by_genre.sql](./13-count_shows_by_genre.sql): MySQL script that lists all genres from `hbtn_0d_tvshows` and displays the number of shows linked to each, in order of descending number of shows linked
+- Each record should display: `<TV Show genre>` - `<Number of shows linked to this genre>`
+- First column must be called `genre`
+- Second column must be called `number_of_shows`
+- Does not display a genre if it has no linked shows
+- The database name will be passed as an argument of the `mysql` command
+```
+guillaume@ubuntu:~/$ cat 13-count_shows_by_genre.sql | mysql -hlocalhost -uroot -p hbtn_0d_tvshows
+Enter password: 
+genre   number_of_shows
+Drama   5
+Comedy  4
+Mystery 2
+Crime   2
+Suspense    2
+Thriller    2
+Adventure   1
+Fantasy 1
+guillaume@ubuntu:~/$ 
+```
 
-* **13. Number of shows by genre**
-  * [13-count_shows_by_genre.sql](./13-count_shows_by_genre.sql): MySQL script that lists all genres from
-  `hbtn_0d_tvshows` and displays the number of shows linked to each, in order of descending number of shows linked.
-  * Does not display a genre if it has no linked shows.
+[14-my_genres.sql](./14-my_genres.sql): MySQL script that uses the `hbtn_0d_tvshows` database to list all genres of the show Dexter, in order of ascending genre name
+- Each record should display: `tv_genres.name`
+- The database name will be passed as an argument of the `mysql` command
+```
+guillaume@ubuntu:~/$ cat 14-my_genres.sql | mysql -hlocalhost -uroot -p hbtn_0d_tvshows
+Enter password: 
+name
+Crime
+Drama
+Mystery
+Suspense
+Thriller
+guillaume@ubuntu:~/$
+```
 
-* **14. My genres**
-  * [14-my_genres.sql](./14-my_genres.sql): MySQL script that uses the `hbtn_0d_tvshows` database
-  to list all genres of the show Dexter, in order of ascending genre name.
+[15-comedy_only.sql](./15-comedy_only.sql): MySQL script that lists all comedy shows in the database `hbtn_0d_tvshows`, in order of ascending show title
+- Each record should display: `tv_shows.title`
+- The database name will be passed as an argument of the `mysql` command
+```
+guillaume@ubuntu:~/$ cat 15-comedy_only.sql | mysql -hlocalhost -uroot -p hbtn_0d_tvshows
+Enter password: 
+title
+New Girl
+Silicon Valley
+The Big Bang Theory
+The Last Man on Earth
+guillaume@ubuntu:~/$ 
+```
 
-* **15. Only Comedy**
-  * [15-comedy_only.sql](./15-comedy_only.sql): MySQL script that lists all comedy shows in the
-  database `hbtn_0d_tvshows`, in order of ascending show title.
+[16-shows_by_genre.sql](./16-shows_by_genre.sql): a script that lists all shows, and all genres linked to that show, from the database `hbtn_0d_tvshows`, in order of ascending show title and genre name
+- If a show doesn’t have a genre, display `NULL` in the genre column
+- Each record should display: `tv_shows.title` - `tv_genres.name`
+- The database name will be passed as an argument of the `mysql` command
+```
+guillaume@ubuntu:~/$ cat 16-shows_by_genre.sql | mysql -hlocalhost -uroot -p hbtn_0d_tvshows
+Enter password: 
+title   name
+Better Call Saul    NULL
+Breaking Bad    Crime
+Breaking Bad    Drama
+Breaking Bad    Suspense
+Breaking Bad    Thriller
+Dexter  Crime
+Dexter  Drama
+Dexter  Mystery
+Dexter  Suspense
+Dexter  Thriller
+Game of Thrones Adventure
+Game of Thrones Drama
+Game of Thrones Fantasy
+Homeland    NULL
+House   Drama
+House   Mystery
+New Girl    Comedy
+Silicon Valley  Comedy
+The Big Bang Theory Comedy
+The Last Man on Earth   Comedy
+The Last Man on Earth   Drama
+guillaume@ubuntu:~/$ 
+```
 
-* **16. List shows and genres**
-  * [16-shows_by_genre.sql](./16-shows_by_genre.sql): MySQL script that lists all shows, and all genres
-  linked to that show, from the database `hbtn_0d_tvshows`, in order of ascending show title and genre name.
+### Advanced
+[100-not_my_genres.sql](./100-not_my_genres.sql`) MySQL script that uses the `hbtn_0d_tvshows` database to list all genres not linked to the show Dexter, in order of ascending genre name
+- Each record should display: `tv_genres.name`
+- The database name will be passed as an argument of the `mysql` command
+```
+guillaume@ubuntu:~/$ cat 100-not_my_genres.sql | mysql -hlocalhost -uroot -p hbtn_0d_tvshows
+Enter password: 
+name
+Adventure
+Comedy
+Fantasy
+guillaume@ubuntu:~/$ 
+```
 
-* **17. Not my genre**
-  * [100-not_my_genres.sql](./100-not_my_genres.sql`) MySQL script that uses the `hbtn_0d_tvshows`
-  database to list all genres not linked to the show Dexter, in order of ascending genre name.
+[101-not_a_comedy.sql](./101-not_a_comedy.sql): a script that lists all shows without the genre comedy in the database `hbtn_0d_tvshows`, in order of ascending show title
+- The `tv_genres` table contains only one record where `name` = Comedy (but the id can be different)
+- Each record should display: `tv_shows.title`
+- The database name will be passed as an argument of the `mysql` command
+```
+guillaume@ubuntu:~/$ cat 101-not_a_comedy.sql | mysql -hlocalhost -uroot -p hbtn_0d_tvshows
+Enter password: 
+title
+Better Call Saul
+Breaking Bad
+Dexter
+Game of Thrones
+Homeland
+House
+guillaume@ubuntu:~/$ 
+```
 
-* **18. No Comedy tonight!**
-  * [101-not_a_comedy.sql](./101-not_a_comedy.sql): MySQL script that lists all shows without the
-  genre comedy in the database `hbtn_0d_tvshows`, in order of ascending show title.
+[102-rating_shows.sql](./102-rating_shows.sql): a script that lists all shows from `hbtn_0d_tvshows_rate` by their rating, in order of descending rating (Import the database dump from [hbtn_0d_tvshows_rate](https://s3.amazonaws.com/intranet-projects-files/holbertonschool-higher-level_programming+/274/hbtn_0d_tvshows_rate.sql) to your MySQL server)
+- Each record should display: `tv_shows.title` - `rating sum`
+- The database name will be passed as an argument of the `mysql` command
+```
+guillaume@ubuntu:~/$ cat 102-rating_shows.sql | mysql -hlocalhost -uroot -p hbtn_0d_tvshows_rate
+Enter password: 
+title   rating
+Better Call Saul    163
+Homeland    145
+Silicon Valley  82
+Game of Thrones 79
+Dexter  24
+House   21
+Breaking Bad    16
+The Last Man on Earth   10
+The Big Bang Theory 0
+New Girl    0
+guillaume@ubuntu:~/$ 
+```
 
-* **19. Rotten tomatoes**
-  * [102-rating_shows.sql](./102-rating_shows.sql): MySQL script that lists all shows from
-  `hbtn_0d_tvshows_rate` by their rating, in order of descending rating.
-
-* **20. Best genre**
-  * [103-rating_genres.sql](./103-rating_genres.sql): MySQL script that lists all genres in the
-  database `hbtn_0d_tvshows_rate` by their rating, in order of descending rating.
+[103-rating_genres.sql](./103-rating_genres.sql): a script that lists all genres in the database `hbtn_0d_tvshows_rate` by their rating, in order of descending rating
+- Each record should display: `tv_genres.name` - `rating sum`
+- The database name will be passed as an argument of the `mysql` command
+ ```
+ guillaume@ubuntu:~/$ cat 103-rating_genres.sql | mysql -hlocalhost -uroot -p hbtn_0d_tvshows_rate
+Enter password: 
+name    rating
+Drama   150
+Comedy  92
+Adventure   79
+Fantasy 79
+Mystery 45
+Crime   40
+Suspense    40
+Thriller    40
+guillaume@ubuntu:~/$ 
+ ```
