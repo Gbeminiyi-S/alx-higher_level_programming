@@ -3,8 +3,8 @@
     of the variable X-Request-Id in the response header
 """
 import requests
+import sys
 
 
-url = 'https://alx-intranet.hbtn.io/status'
-req = requests.get(url).headers
+req = requests.get(sys.argv[1]).headers
 print(req.get("X-Request-Id"))
