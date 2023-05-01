@@ -50,3 +50,10 @@ guillaume@ubuntu:~/0x14$ cat my_file.txt ; echo ""
 Python is cool
 guillaume@ubuntu:~/0x14$ 
 ```
+
+[2-statuscode.js](./2-statuscode.js) - a script that display the status code of a GET request
+
+Requirements
+- The first argument is the file path
+- The status code must be printed like this: `code: <status code>`
+- Must use the module `request`
