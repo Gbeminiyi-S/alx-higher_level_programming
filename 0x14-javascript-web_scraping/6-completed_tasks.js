@@ -1,9 +1,9 @@
 #!/usr/bin/node
 const request = require('request');
 
-const apiUrl = 'https://jsonplaceholder.typicode.com/todos';
+const url = process.argv[2];
 
-request.get(apiUrl, (error, response, body) => {
+request.get(url, (error, response, body) => {
   if (error) {
     console.error(error);
     return;
