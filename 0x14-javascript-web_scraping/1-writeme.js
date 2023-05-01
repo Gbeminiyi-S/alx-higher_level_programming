@@ -6,7 +6,7 @@ const fs = require('fs');
 const file = process.argv[2];
 
 // write to file
-fs.writeFile(file, process.argv[3], { flag:'w' }, (err) => {
+fs.writeFile(file, process.argv[3], { flag: 'w' }, (err) => {
   if (err) {
     console.log(err);
   }
