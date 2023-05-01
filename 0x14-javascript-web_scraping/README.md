@@ -93,3 +93,113 @@ guillaume@ubuntu:~/0x14$ ./4-starwars_count.js https://swapi-api.alx-tools.com/a
 3
 guillaume@ubuntu:~/0x14$ 
 ```
+
+[5-request_store.js](./5-request_store.js) - a script that gets the contents of a webpage and stores it in a file
+
+Requirements
+
+- The first argument is the URL to request
+- The second argument the file path to store the body response
+- The file must be UTF-8 encoded
+- Must use the module `request`
+```
+guillaume@ubuntu:~/0x14$ ./5-request_store.js http://loripsum.net/api loripsum
+guillaume@ubuntu:~/0x14$ cat loripsum
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Haec quo modo conveniant, non sane intellego. Nam memini etiam quae nolo, oblivisci non possum quae volo. Te enim iudicem aequum puto, modo quae dicat ille bene noris. Terram, mihi crede, ea lanx et maria deprimet. Deinde prima illa, quae in congressu solemus: Quid tu, inquit, huc? Hoc etsi multimodis reprehendi potest, tamen accipio, quod dant. </p>
+
+<p>Ad eos igitur converte te, quaeso. Pudebit te, inquam, illius tabulae, quam Cleanthes sane commode verbis depingere solebat. Sic enim censent, oportunitatis esse beate vivere. Quo studio Aristophanem putamus aetatem in litteris duxisse? Aeque enim contingit omnibus fidibus, ut incontentae sint. Ut aliquid scire se gaudeant? Qui enim existimabit posse se miserum esse beatus non erit. Putabam equidem satis, inquit, me dixisse. </p>
+
+<p>Duo Reges: constructio interrete. Quid ei reliquisti, nisi te, quoquo modo loqueretur, intellegere, quid diceret? Quis animo aequo videt eum, quem inpure ac flagitiose putet vivere? Illud non continuo, ut aeque incontentae. Illa videamus, quae a te de amicitia dicta sunt. At ille pellit, qui permulcet sensum voluptate. Tamen aberramus a proposito, et, ne longius, prorsus, inquam, Piso, si ista mala sunt, placet. </p>
+
+<p>Non enim, si omnia non sequebatur, idcirco non erat ortus illinc. Nos cum te, M. Quem si tenueris, non modo meum Ciceronem, sed etiam me ipsum abducas licebit. Apparet statim, quae sint officia, quae actiones. Ergo instituto veterum, quo etiam Stoici utuntur, hinc capiamus exordium. Eadem nunc mea adversum te oratio est. Quid, si etiam iucunda memoria est praeteritorum malorum? Hoc enim constituto in philosophia constituta sunt omnia. </p>
+
+guillaume@ubuntu:~/0x14$ 
+```
+
+[6-completed_tasks.js](./6-completed_tasks.js) - a script that computes the number of tasks completed by user id
+
+Requirements
+
+- The first argument is the API URL: `https://jsonplaceholder.typicode.com/todos`
+- Only print users with completed task
+- Must use the module `request`
+```
+guillaume@ubuntu:~/0x14$ ./6-completed_tasks.js https://jsonplaceholder.typicode.com/todos
+{ '1': 11,
+  '2': 8,
+  '3': 7,
+  '4': 6,
+  '5': 12,
+  '6': 6,
+  '7': 9,
+  '8': 11,
+  '9': 8,
+  '10': 12 }
+guillaume@ubuntu:~/0x14$
+```
+
+[100-starwars_characters.js](./100-starwars_characters.js)- a script that prints all characters of a Star Wars movie:
+
+Requirements
+
+- The first argument is the Movie ID - example: `3` = “Return of the Jedi”
+- Display one character name by line
+- Must use the [Star wars API](https://swapi-api.alx-tools.com/)
+- Must use the module `request`
+```
+guillaume@ubuntu:~/0x14$ ./100-starwars_characters.js 3
+Darth Vader
+R2-D2
+Luke Skywalker
+Han Solo
+Leia Organa
+Chewbacca
+Palpatine
+Obi-Wan Kenobi
+Jabba Desilijic Tiure
+Wedge Antilles
+Yoda
+Boba Fett
+Ackbar
+Arvel Crynyd
+Mon Mothma
+Nien Nunb
+Wicket Systri Warrick
+Bib Fortuna
+C-3PO
+Lando Calrissian
+guillaume@ubuntu:~/0x14$ 
+```
+
+[101-starwars_characters.js](./101-starwars_characters.js)- a script that prints all characters of a Star Wars movie:
+
+Requirements
+
+- The first argument is the Movie ID - example: `3` = “Return of the Jedi”
+- Display one character name by line __in the same order of the list “characters” in the /films/ response__
+- Must use the [Star wars API](https://swapi-api.alx-tools.com/)
+- Must use the module `request`
+```
+guillaume@ubuntu:~/0x14$ ./101-starwars_characters.js 3
+Luke Skywalker
+C-3PO
+R2-D2
+Darth Vader
+Leia Organa
+Obi-Wan Kenobi
+Chewbacca
+Han Solo
+Jabba Desilijic Tiure
+Wedge Antilles
+Yoda
+Palpatine
+Boba Fett
+Lando Calrissian
+Ackbar
+Mon Mothma
+Arvel Crynyd
+Wicket Systri Warrick
+Nien Nunb
+Bib Fortuna
+guillaume@ubuntu:~/0x14$ 
+```
