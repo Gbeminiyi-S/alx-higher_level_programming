@@ -7,9 +7,9 @@ const url = process.argv[2];
 request.get(url, (error, response, body) => {
   if (error) {
     console.error(error);
-    return;
+  } else {
+    const films = JSON.parse(body).results;
+    const numFilms = films.filter(film => film.characters.includes('https://swapi-api.alx-tools.com/api/people/18/')).length;
+    console.log(`${numFilms}`);
   }
-  const films = JSON.parse(body).results;
-  const numFilms = films.filter(film => film.characters.includes('https://swapi-api.alx-tools.com/api/people/18/')).length;
-  console.log(`${numFilms}`);
 });
